@@ -1,0 +1,216 @@
+2020-08-07 23:54:16,643; NESTER; DEBUG; 31; <module> ; ------------------------------start------------------------------
+2020-08-07 23:54:16,655; Fusion360CommandBase; DEBUG; 112; __init__ ; Fusion360CommandBase.init
+2020-08-07 23:54:16,668; Fusion360CommandBase; DEBUG; 145; onRun ; Fusion360CommandBase.onRun
+2020-08-07 23:54:16,699; Fusion360CommandBase; DEBUG; 81; toolbarPanelById_in_Workspace ; toolbarPanelById_in_Workspace
+2020-08-07 23:54:16,713; Fusion360CommandBase; DEBUG; 390; __init__ ; CommandCreatedEventHandler
+2020-08-07 23:54:21,401; Fusion360CommandBase; DEBUG; 393; notify ; CommandCreatedEventHandler.notify
+2020-08-07 23:54:21,413; Fusion360CommandBase; DEBUG; 351; __init__ ; CommandExecuteHandler
+2020-08-07 23:54:21,426; Fusion360CommandBase; DEBUG; 331; __init__ ; InputChangedHandler
+2020-08-07 23:54:21,444; Fusion360CommandBase; DEBUG; 305; __init__ ; DestroyHandler
+2020-08-07 23:54:21,474; Fusion360CommandBase; DEBUG; 288; __init__ ; ExecutePreviewHandler
+2020-08-07 23:54:21,486; Fusion360CommandBase; DEBUG; 371; __init__ ; MouseClickHandler
+2020-08-07 23:54:21,498; Fusion360CommandBase; DEBUG; 422; notify ; ***Debug ***Panel command created successfully
+2020-08-07 23:54:40,120; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:54:40,132; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:54:40,144; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:54:40,156; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:54:40,174; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:54:40,175; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_plane was the command
+2020-08-07 23:54:40,181; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:54:40,212; NesterCommand; DEBUG; 255; addStock ; Nester.NestFaces.addStock
+2020-08-07 23:54:40,218; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:43,413; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:54:43,419; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:54:43,430; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:54:43,454; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:54:43,460; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:54:43,466; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_selection was the command
+2020-08-07 23:54:43,472; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:54:43,502; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:43,509; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:43,515; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:43,539; Fusion360CommandBase; DEBUG; 291; notify ; ExecutePreviewHandler.notify
+2020-08-07 23:54:43,557; Fusion360CommandBase; DEBUG; 298; notify ; ***Debug *** Preview: cmdID_Nester execute preview event triggered
+2020-08-07 23:54:43,575; NesterCommand; DEBUG; 515; onPreview ; Nester.NesterCommend.onPreview
+2020-08-07 23:54:43,581; NesterCommand; DEBUG; 34; getInputs ; getInputs
+2020-08-07 23:54:43,593; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:43,611; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:43,623; NesterCommand; DEBUG; 323; addJointOrigin ; Nester.NestStock.addJointOrigin
+2020-08-07 23:54:43,653; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:43,729; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:43,774; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:43,847; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:44,757; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:54:44,763; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:54:44,780; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:54:44,794; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:54:44,800; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:54:44,812; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_selection was the command
+2020-08-07 23:54:44,824; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:54:44,842; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:44,855; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:44,885; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:44,897; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:44,909; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:44,920; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:45,000; Fusion360CommandBase; DEBUG; 291; notify ; ExecutePreviewHandler.notify
+2020-08-07 23:54:45,012; Fusion360CommandBase; DEBUG; 298; notify ; ***Debug *** Preview: cmdID_Nester execute preview event triggered
+2020-08-07 23:54:45,018; NesterCommand; DEBUG; 515; onPreview ; Nester.NesterCommend.onPreview
+2020-08-07 23:54:45,036; NesterCommand; DEBUG; 34; getInputs ; getInputs
+2020-08-07 23:54:45,042; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:45,078; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:45,084; NesterCommand; DEBUG; 323; addJointOrigin ; Nester.NestStock.addJointOrigin
+2020-08-07 23:54:45,090; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:45,171; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:45,210; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:45,269; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:45,340; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:45,383; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:45,424; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:45,492; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:46,267; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:54:46,279; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:54:46,291; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:54:46,315; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:54:46,315; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:54:46,327; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_selection was the command
+2020-08-07 23:54:46,333; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:54:46,346; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:46,358; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:46,364; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:46,370; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:46,382; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:46,394; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:46,400; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:46,423; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:46,441; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:46,552; Fusion360CommandBase; DEBUG; 291; notify ; ExecutePreviewHandler.notify
+2020-08-07 23:54:46,564; Fusion360CommandBase; DEBUG; 298; notify ; ***Debug *** Preview: cmdID_Nester execute preview event triggered
+2020-08-07 23:54:46,576; NesterCommand; DEBUG; 515; onPreview ; Nester.NesterCommend.onPreview
+2020-08-07 23:54:46,594; NesterCommand; DEBUG; 34; getInputs ; getInputs
+2020-08-07 23:54:46,612; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:46,618; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:46,624; NesterCommand; DEBUG; 323; addJointOrigin ; Nester.NestStock.addJointOrigin
+2020-08-07 23:54:46,636; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:46,744; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:46,785; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:46,816; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:46,828; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:46,875; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:46,933; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:46,961; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:47,024; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:47,104; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:47,133; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:47,186; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:47,252; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:47,980; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:54:47,992; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:54:48,010; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:54:48,035; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:54:48,047; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:54:48,059; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_selection was the command
+2020-08-07 23:54:48,065; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:54:48,090; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:48,108; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:48,120; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:48,145; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:48,157; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:48,163; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:48,181; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:48,199; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:48,211; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:48,223; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:54:48,241; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:54:48,253; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:54:48,406; Fusion360CommandBase; DEBUG; 291; notify ; ExecutePreviewHandler.notify
+2020-08-07 23:54:48,418; Fusion360CommandBase; DEBUG; 298; notify ; ***Debug *** Preview: cmdID_Nester execute preview event triggered
+2020-08-07 23:54:48,430; NesterCommand; DEBUG; 515; onPreview ; Nester.NesterCommend.onPreview
+2020-08-07 23:54:48,448; NesterCommand; DEBUG; 34; getInputs ; getInputs
+2020-08-07 23:54:48,460; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:48,466; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:48,484; NesterCommand; DEBUG; 323; addJointOrigin ; Nester.NestStock.addJointOrigin
+2020-08-07 23:54:48,490; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:48,574; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,618; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,643; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,672; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,678; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,696; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,714; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,771; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:48,848; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:48,876; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:48,918; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:48,998; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:49,031; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:49,075; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:49,138; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:49,187; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:49,232; NesterCommand; DEBUG; 99; createJoint ; createJoint
+2020-08-07 23:54:49,294; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:50,455; Fusion360CommandBase; DEBUG; 354; notify ; CommandExecuteHandler.notify
+2020-08-07 23:54:50,467; Fusion360CommandBase; DEBUG; 362; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:54:50,496; NesterCommand; DEBUG; 602; onExecute ; NesterCommand.onExecute
+2020-08-07 23:54:50,508; NesterCommand; DEBUG; 34; getInputs ; getInputs
+2020-08-07 23:54:50,514; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:50,531; NesterCommand; DEBUG; 21; getSelectedObjects ; getSelectedObjects
+2020-08-07 23:54:50,543; NesterCommand; DEBUG; 323; addJointOrigin ; Nester.NestStock.addJointOrigin
+2020-08-07 23:54:50,555; NesterCommand; DEBUG; 153; getBoundingBoxExtent ; getBoundingBoxExtents
+2020-08-07 23:54:50,652; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,658; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,670; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,682; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,700; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,706; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,718; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,730; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,736; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,748; NesterCommand; DEBUG; 455; addJoint ; Nester.NestFace.addJoint
+2020-08-07 23:54:50,780; Fusion360CommandBase; DEBUG; 309; notify ; DestroyHandler.notify
+2020-08-07 23:54:50,786; Fusion360CommandBase; DEBUG; 321; notify ; ***Debug ***Command: cmdID_Nester destroyed
+2020-08-07 23:54:50,792; Fusion360CommandBase; DEBUG; 322; notify ; ***Debug ***Reason for termination= 1
+2020-08-07 23:54:50,810; NesterCommand; DEBUG; 532; onDestroy ; Nester.NesterCommend.onDestroy
+2020-08-07 23:55:00,791; NESTER; DEBUG; 31; <module> ; ------------------------------start------------------------------
+2020-08-07 23:55:00,803; Fusion360CommandBase; DEBUG; 112; __init__ ; Fusion360CommandBase.init
+2020-08-07 23:55:00,815; Fusion360CommandBase; DEBUG; 145; onRun ; Fusion360CommandBase.onRun
+2020-08-07 23:55:00,821; Fusion360CommandBase; DEBUG; 81; toolbarPanelById_in_Workspace ; toolbarPanelById_in_Workspace
+2020-08-07 23:55:00,828; Fusion360CommandBase; DEBUG; 390; __init__ ; CommandCreatedEventHandler
+2020-08-07 23:55:05,694; Fusion360CommandBase; DEBUG; 393; notify ; CommandCreatedEventHandler.notify
+2020-08-07 23:55:05,700; Fusion360CommandBase; DEBUG; 351; __init__ ; CommandExecuteHandler
+2020-08-07 23:55:05,712; Fusion360CommandBase; DEBUG; 331; __init__ ; InputChangedHandler
+2020-08-07 23:55:05,748; Fusion360CommandBase; DEBUG; 305; __init__ ; DestroyHandler
+2020-08-07 23:55:05,760; Fusion360CommandBase; DEBUG; 288; __init__ ; ExecutePreviewHandler
+2020-08-07 23:55:05,773; Fusion360CommandBase; DEBUG; 371; __init__ ; MouseClickHandler
+2020-08-07 23:55:05,791; Fusion360CommandBase; DEBUG; 422; notify ; ***Debug ***Panel command created successfully
+2020-08-07 23:55:06,782; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:55:06,788; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:55:06,806; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_plane was the command
+2020-08-07 23:55:06,818; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:55:06,825; NesterCommand; DEBUG; 255; addStock ; Nester.NestFaces.addStock
+2020-08-07 23:55:06,831; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:55:06,861; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:55:06,885; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:55:06,897; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:55:06,933; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:55:06,957; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:55:06,963; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_plane was the command
+2020-08-07 23:55:06,968; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:55:11,112; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:55:11,118; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:55:11,130; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_selection was the command
+2020-08-07 23:55:11,142; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:55:11,154; NesterCommand; DEBUG; 244; add ; Nester.NestFaces.add
+2020-08-07 23:55:11,160; NesterCommand; DEBUG; 312; __init__ ; Nester.NestStock.init
+2020-08-07 23:55:11,178; NesterCommand; DEBUG; 417; __init__ ; Nester.NestFace.init
+2020-08-07 23:55:11,220; Fusion360CommandBase; DEBUG; 374; notify ; MouseClickHandler.notify
+2020-08-07 23:55:11,226; Fusion360CommandBase; DEBUG; 381; notify ; ***Debug ***command: cmdID_Nester executed successfully
+2020-08-07 23:55:11,232; NesterCommand; DEBUG; 596; onMouseClick ; NesterCommand.onMouseClick
+2020-08-07 23:55:11,250; Fusion360CommandBase; DEBUG; 334; notify ; InputChangedHandler.init
+2020-08-07 23:55:11,268; Fusion360CommandBase; DEBUG; 341; notify ; ***Debug ***Input: cmdID_Nester changed event triggered
+2020-08-07 23:55:11,280; Fusion360CommandBase; DEBUG; 342; notify ; ***Debug ***The Input: cmdID_Nester_selection was the command
+2020-08-07 23:55:11,304; NesterCommand; DEBUG; 537; onInputChanged ; Nester.NesterCommend.onInputChanged
+2020-08-07 23:55:13,252; Fusion360CommandBase; DEBUG; 309; notify ; DestroyHandler.notify
+2020-08-07 23:55:13,264; Fusion360CommandBase; DEBUG; 321; notify ; ***Debug ***Command: cmdID_Nester destroyed
+2020-08-07 23:55:13,276; Fusion360CommandBase; DEBUG; 322; notify ; ***Debug ***Reason for termination= 2
+2020-08-07 23:55:13,294; NesterCommand; DEBUG; 532; onDestroy ; Nester.NesterCommend.onDestroy
