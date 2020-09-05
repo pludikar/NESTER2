@@ -1,7 +1,7 @@
 # NESTER
-Simple script to lay parts out flat in Fusion 360.  This is not an "official" app, rather something I have been working on as a hobby.
-It is specifically useful for use with a CNC Router.  
-I use it to take all of the parts in a design and ley them out flat.
+Fusion 360 AddIn to lay parts out flat, push dxf ready for apps such as deepnest.io, pull dxfs from external app and match and move parts to stock.
+
+Nester2 is based on Patrick Rainsberry's original Add-In.  Most operating code has changed, although some of the Event Handler structure remains.
 
 ![Nester Cover](./Nester_Cover.png)
 
@@ -10,17 +10,10 @@ First see [How to install sample Add-Ins and Scripts](https://rawgit.com/Autodes
 
 *Note: THe video shows it running as a script.  I recently modified it to be a proper add-in.  You should put the entire directory in your Addins folder in the Fusion 360 API folder.  Once you have put the files there you can click on add-ins in Fusion and select the addins tab.  You can now start the addin (and set auto start).  Once it is running you will get an button under the addins drop down that can be used to run it.  
 
-*I will try to make a new video ASAP
-
-See a youtube video of using the script here: https://www.youtube.com/watch?v=7SY367qt3YQ
-
 ## License
 Samples are licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for full details.
 
 ## Written by
 
-Written by [Patrick Rainsberry](https://twitter.com/prrainsberry) <br /> (Autodesk Fusion 360 Business Development)
+Written by Peter Ludikar <br /> (loosely based on Patrick's work)
 
-See more useful [Fusion 360 Utilities](https://tapnair.github.io/index.html)
-
-[![Analytics](https://ga-beacon.appspot.com/UA-41076924-3/nester)](https://github.com/igrigorik/ga-beacon)
