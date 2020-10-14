@@ -171,12 +171,12 @@ def centreOffsetsFromFace(face):  # assumes that face is in the xy plane - no ch
     maxBodyBox = body.boundingBox.maxPoint
     minBodyBox = body.boundingBox.minPoint
     height = maxBodyBox.z - minBodyBox.z
-    logger.debug(f'bounding box - Body; {minBodyBox.x:.3f}; \
-                                        {minBodyBox.y:.3f}; \
-                                        {minBodyBox.z:.3f}; \
-                                        {maxBodyBox.x:.3f}; \
-                                        {maxBodyBox.y:.3f}; \
-                                        {maxBodyBox.z:.3f}')
+    logger.debug(f'bounding box - Body; {minBodyBox.x: 9.3f};'
+                                        f'{minBodyBox.y: 9.3f};'
+                                        f'{minBodyBox.z: 9.3f};'
+                                        f'{maxBodyBox.x: 9.3f};'
+                                        f'{maxBodyBox.y: 9.3f};'
+                                        f'{maxBodyBox.z: 9.3f}')
 
     bodyCentreX = (minBodyBox.x + maxBodyBox.x) /2
     bodyCentreY = (minBodyBox.y + maxBodyBox.y) /2
@@ -184,19 +184,19 @@ def centreOffsetsFromFace(face):  # assumes that face is in the xy plane - no ch
 
     minFaceBox = face.boundingBox.minPoint
     maxFaceBox = face.boundingBox.maxPoint
-    logger.debug(f'bounding box - Face; {minFaceBox.x:.3f}; \
-                                        {minFaceBox.y:.3f}; \
-                                        {minFaceBox.z:.3f}; \
-                                        {maxFaceBox.x:.3f}; \
-                                        {maxFaceBox.y:.3f}; \
-                                        {maxFaceBox.z:.3f}')
+    logger.debug(f'bounding box - Face; {minFaceBox.x: 9.3};'
+                                        f'{minFaceBox.y: 9.3};'
+                                        f'{minFaceBox.z: 9.3};'
+                                        f'{maxFaceBox.x: 9.3};'
+                                        f'{maxFaceBox.y: 9.3};'
+                                        f'{maxFaceBox.z: 9.3}')
 
     faceCentreX = (minFaceBox.x + maxFaceBox.x)/2
     faceCentreY = (minFaceBox.y + maxFaceBox.y)/2
-    logger.debug(f'bodyCentre; {bodyCentreX:.3f}; {bodyCentreY:.3f}')
-    logger.debug(f'faceCentre; {faceCentreX:.3f}; {faceCentreY:.3f}')
+    logger.debug(f'bodyCentre; {bodyCentreX: 9.3}; {bodyCentreY: 9.3}')
+    logger.debug(f'faceCentre; {faceCentreX: 9.3}; {faceCentreY: 9.3}')
 
-    logger.debug(f'offsets ;{(bodyCentreX - faceCentreX):.3f} ;{(bodyCentreY - faceCentreY):.3f}')
+    logger.debug(f'offsets ;{(bodyCentreX - faceCentreX): 9.3} ;{(bodyCentreY - faceCentreY): 9.3}')
 
     return ((bodyCentreX - faceCentreX), (bodyCentreY - faceCentreY), height)
 

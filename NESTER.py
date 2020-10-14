@@ -57,9 +57,26 @@ def run(context):
     ui = app.userInterface
     commandDefinitions = ui.commandDefinitions
 
-    cmdDef = commandDefinitions.itemById(commandName1)
-    if cmdDef:
-        cmdDef.deleteMe()
+    cmdDef = [x for x in ui.commandDefinitions if commandName1 in x.id]
+    for x in cmdDef:
+        x.deleteMe()
+
+    toolbarPanels = [x for x in ui.allToolbarPanels if commandName1 in x.id]
+
+    for panel in toolbarPanels:
+        panelControls = [x.controls for x in toolbarPanels]
+        for controls in panelControls:
+            for control in controls:
+                control.deleteMe()
+            try:
+                controls.deleteMe()
+            except AttributeError:
+                continue
+        panel.deleteMe()
+
+    tabBars = [x for x in ui.allToolbarTabs if commandName1 in x.id]
+    for x in tabBars:
+        x.deleteMe()
 
     adsk.autoTerminate(False)
 
