@@ -6,6 +6,7 @@ from math import pi, tan
 import os
 import traceback
 from functools import wraps
+from common import *
 
 def timer(func):
     @wraps(func)
@@ -76,6 +77,7 @@ def correctedSketchEdgeVector(edge, refPoint):
         return edge.endSketchPoint.geometry.vectorTo(edge.startSketchPoint.geometry)
     return False
 
+@makeTempFaceVisible
 def getTmpFaceFromProfile(profile:adsk.fusion.Profile, tempBrepMgr:adsk.fusion.TemporaryBRepManager):
     profileLoops = profile.profileLoops
     for profileLoop in profileLoops:
@@ -90,6 +92,7 @@ def getTmpFaceFromProfile(profile:adsk.fusion.Profile, tempBrepMgr:adsk.fusion.T
     tmpFace = tempBrepMgr.createFaceFromPlanarWires([tmpBody])
     return tmpFace
 
+@makeTempFaceVisible
 def getTmpFaceFromProjectedEntities(objectCollection:adsk.core.ObjectCollection, tempBrepMgr:adsk.fusion.TemporaryBRepManager):
     worldCurves = [c.worldGeometry for c in objectCollection]
     tmpBody, edgemap = tempBrepMgr.createWireFromCurves(worldCurves)
@@ -245,7 +248,7 @@ def crawlAndCopy(source, target:adsk.fusion.Occurrence):
     logger.debug(f'new call; parent: {name}; target: {target.fullPathName}')
     childOccurrences = rootComp.occurrences if source == rootComp else source.childOccurrences
     
-    sourceOccurrences = [o for o in childOccurrences if o.component.name != 'Manufacturing']
+    sourceOccurrences = [o for o in childOccurrences if 'Manufacturing' not in o.component.name]
     logger.debug(f'source occurrences: {[o.name for o in childOccurrences]}')
     for sourceOccurrence in sourceOccurrences:
         logger.debug(f'Working on {sourceOccurrence.name}')
@@ -318,8 +321,6 @@ def crawlAndCopy2(parent, target:adsk.fusion.Occurrence):
         # logger.debug(f'child: {childOccurrence.fullPathName}; target: {newTargetOccurrence.fullPathName}')
         if childOccurrence.childOccurrences:
             crawlAndCopy(childOccurrence, newTargetOccurrence)
-    
-     
-        
 
-    
+
+   

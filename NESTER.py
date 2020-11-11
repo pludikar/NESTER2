@@ -28,17 +28,17 @@ streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
 
 from . import NesterCommand
-from  .common import nestFacesDict
+from  .common import _nestItemsDict
 
 app = adsk.core.Application.get()
-nestFaces = nestFacesDict.setdefault(app.activeDocument.name, NesterCommand.NestFaces())
+_nestItems = _nestItemsDict.setdefault(app.activeDocument.name, NesterCommand.NestItems())
 
 logger.info('------------------------------start------------------------------')
 
 commandName1 = 'Nester'
 commandDescription1 = 'Basic Nesting for Fusion 360'
 commandResources1 = './resources'
-cmdId1 = 'cmdID_Nester'
+cmdId1 = 'Nester'
 myWorkspace1 = 'FusionSolidEnvironment'
 myToolbarTabID1 = 'Nest'
 myToolbarPanelID1 = 'SolidScriptsAddinsPanel'
@@ -50,7 +50,7 @@ newCommand1 = NesterCommand.NesterCommand(commandName1,
                                         cmdId1, 
                                         myWorkspace1, 
                                         myToolbarPanelID1,
-                                        nestFaces)
+                                        _nestItems)
 
 def run(context):
     app = adsk.core.Application.get()

@@ -2,7 +2,7 @@
 import adsk.core, adsk.fusion, traceback
 
 import logging, os, sys
-from  .common import nestFacesDict, handlers
+from  .common import _nestItemsDict, handlers
 from .common import eventHandler
 
 logger = logging.getLogger('Nester.F360CommandBase')
@@ -68,10 +68,11 @@ def commandControlById_in_DropDown(cmdId, dropDownControl):
 
 # Destroys a given object
 def destroyObject(tobeDeleteObj):
+    if not tobeDeleteObj:
+        return False
     logger.info(f"destroyObject - {tobeDeleteObj.id} ")
     app = adsk.core.Application.get()
     ui = app.userInterface
-    
     if ui and tobeDeleteObj:
         if tobeDeleteObj.isValid:
             tobeDeleteObj.deleteMe()
@@ -108,43 +109,43 @@ def commandControlById_in_Panel(cmdId, ToolbarPanel):
         return cmd_control
 
 # Base Class for creating Fusion 360 Commands
-class Fusion360CommandBase:
+# class Fusion360CommandBase:
     
-    def __init__(self, commandName, commandDescription, commandResources, cmdId, myWorkspace, myToolbarPanelID, nestFaces):
-        logger.info("Fusion360CommandBase.init")
-        self.commandName = commandName
-        self.commandDescription = commandDescription
-        self.commandResources = commandResources
-        self.cmdId = cmdId
-        self.myWorkspace = myWorkspace
-        self.myToolbarPanelID = myToolbarPanelID
-        self.DC_CmdId = 'Show Hidden'
-        self._nestFaces = nestFaces
+    # def __init__(self, commandName, commandDescription, commandResources, cmdId, myWorkspace, myToolbarPanelID, _nestItems):
+    #     logger.info("Fusion360CommandBase.init")
+    #     self.commandName = commandName
+    #     self.commandDescription = commandDescription
+    #     self.commandResources = commandResources
+    #     self.cmdId = cmdId
+    #     self.myWorkspace = myWorkspace
+    #     self.myToolbarPanelID = myToolbarPanelID
+    #     self.DC_CmdId = 'Show Hidden'
+    #     self.__nestItems = _nestItems
         
-        # global set of event handlers to keep them referenced for the duration of the command
-        # self.handlers = []
+    #     # global set of event handlers to keep them referenced for the duration of the command
+    #     # self.handlers = []
         
-        try:
-            self.app = adsk.core.Application.get()
-            self.ui = self.app.userInterface
+    #     try:
+    #         self.app = adsk.core.Application.get()
+    #         self.ui = self.app.userInterface
 
-        except:
-            logger.exception('Couldn\'t get app or ui: {}'.format(traceback.format_exc()))
+    #     except:
+    #         logger.exception('Couldn\'t get app or ui: {}'.format(traceback.format_exc()))
     
-    def onPreview(self, args):
-        pass 
+    # def onPreview(self, args):
+    #     pass 
 
-    def onDestroy(self, args):    
-        pass   
+    # def onDestroy(self, args):    
+    #     pass   
 
-    def onInputChanged(self, args):
-        pass
+    # def onInputChanged(self, args):
+    #     pass
 
-    def onExecute(self, args):
-        pass
+    # def onExecute(self, args):
+    #     pass
 
-    def onCreate(self, args):
-        pass
+    # def onCreate(self, args):
+    #     pass
      
     # def onRun(self):
 
@@ -305,84 +306,84 @@ class Fusion360CommandBase:
         # except:
         #     logger.exception('AddIn Start Failed:' )
 
-    def onStop(self):
-        logger.info("Fusion360CommandBase.onStop")
-        try:
-            app = adsk.core.Application.get()
-            ui = app.userInterface
+    # def onStop(self):
+    #     logger.info("Fusion360CommandBase.onStop")
+    #     try:
+    #         app = adsk.core.Application.get()
+    #         ui = app.userInterface
 
-            nestTab = ui.allToolbarTabs.itemById(self.cmdId +'_Tab')
-            try:
-                for tbPanel in nestTab.toolbarPanels:
-                    if self.cmdId not in tbPanel.id:
-                        continue
-                    for dropDownControl in tbPanel.controls:
-                        if self.cmdId not in dropDownControl.id:
-                            continue
-                        for control in dropDownControl.controls:
-                            if self.cmdId not in control.id:
-                                continue
-                            logger.debug(f'{control.id} deleted  {control.deleteMe()}')
-                        logger.debug(f'{dropDownControl.id} deleted  {dropDownControl.deleteMe()}')
-                    logger.debug(f'{tbPanel.id}  deleted {tbPanel.deleteMe()}')
-                logger.debug(f'{nestTab.id} deleted {nestTab.deleteMe()}')
+    #         nestTab = ui.allToolbarTabs.itemById(self.cmdId +'_Tab')
+    #         try:
+    #             for tbPanel in nestTab.toolbarPanels:
+    #                 if self.cmdId not in tbPanel.id:
+    #                     continue
+    #                 for dropDownControl in tbPanel.controls:
+    #                     if self.cmdId not in dropDownControl.id:
+    #                         continue
+    #                     for control in dropDownControl.controls:
+    #                         if self.cmdId not in control.id:
+    #                             continue
+    #                         logger.debug(f'{control.id} deleted  {control.deleteMe()}')
+    #                     logger.debug(f'{dropDownControl.id} deleted  {dropDownControl.deleteMe()}')
+    #                 logger.debug(f'{tbPanel.id}  deleted {tbPanel.deleteMe()}')
+    #             logger.debug(f'{nestTab.id} deleted {nestTab.deleteMe()}')
 
-            except AttributeError:
-                pass
+    #         except AttributeError:
+    #             pass
 
-            cmdDef = [x for x in ui.commandDefinitions if self.cmdId in x.id]
-            for x in cmdDef:
-                logger.debug(f'{x.id} deleted {x.deleteMe()}')
+    #         cmdDef = [x for x in ui.commandDefinitions if self.cmdId in x.id]
+    #         for x in cmdDef:
+    #             logger.debug(f'{x.id} deleted {x.deleteMe()}')
 
-            toolbarPanels = [x for x in ui.allToolbarPanels if self.cmdId in x.id]
+    #         toolbarPanels = [x for x in ui.allToolbarPanels if self.cmdId in x.id]
 
-            try:
-                for panel in toolbarPanels:
-                    panelControls = [x.controls for x in toolbarPanels]
-                    for controls in panelControls:
-                        for control in controls:
-                            logger.debug(f'{control.id} deleted {control.deleteMe()}')
-                        logger.debug(f'{controls.id} deleted {controls.deleteMe()}')
-                    logger.debug(f'{panel.id} deleted {panel.deleteMe()}')
+    #         try:
+    #             for panel in toolbarPanels:
+    #                 panelControls = [x.controls for x in toolbarPanels]
+    #                 for controls in panelControls:
+    #                     for control in controls:
+    #                         logger.debug(f'{control.id} deleted {control.deleteMe()}')
+    #                     logger.debug(f'{controls.id} deleted {controls.deleteMe()}')
+    #                 logger.debug(f'{panel.id} deleted {panel.deleteMe()}')
                 
-            except AttributeError:
-                pass
+    #         except AttributeError:
+    #             pass
 
-            toolbarPanel_ = toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_Panel') 
-            finishPanel_ = toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_FinishTabPanel') 
-            startPanel_ = toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_startPanel') 
+    #         toolbarPanel_ = toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_Panel') 
+    #         finishPanel_ = toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_FinishTabPanel') 
+    #         startPanel_ = toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_startPanel') 
             
-            commandControlPanel_ = commandControlById_in_Panel(self.cmdId, toolbarPanel_)
-            CommandDefinition_ = commandDefinitionById(self.cmdId)
+    #         commandControlPanel_ = commandControlById_in_Panel(self.cmdId, toolbarPanel_)
+    #         CommandDefinition_ = commandDefinitionById(self.cmdId)
 
-            exportCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_export', toolbarPanel_)
-            exportCommandDefinition_ = commandDefinitionById(self.cmdId+'_export')
+    #         exportCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_export', toolbarPanel_)
+    #         exportCommandDefinition_ = commandDefinitionById(self.cmdId+'_export')
 
-            importCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_import', toolbarPanel_)
-            importCommandDefinition_ = commandDefinitionById(self.cmdId+'_import')
+    #         importCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_import', toolbarPanel_)
+    #         importCommandDefinition_ = commandDefinitionById(self.cmdId+'_import')
 
-            finishCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_finish', finishPanel_)
-            finishCommandDefinition_ = commandDefinitionById(self.cmdId+'_finish')
+    #         finishCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_finish', finishPanel_)
+    #         finishCommandDefinition_ = commandDefinitionById(self.cmdId+'_finish')
 
-            startCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_start', startPanel_)
-            startCommandDefinition_ = commandDefinitionById(self.cmdId+'_start')
+    #         startCommandControlPanel_ = commandControlById_in_Panel(self.cmdId+'_start', startPanel_)
+    #         startCommandDefinition_ = commandDefinitionById(self.cmdId+'_start')
 
-            destroyObject(commandControlPanel_)
-            destroyObject(CommandDefinition_)
-            destroyObject(exportCommandControlPanel_)
-            destroyObject(exportCommandDefinition_)
-            destroyObject(importCommandControlPanel_)
-            destroyObject(importCommandDefinition_)
-            destroyObject(finishCommandControlPanel_)
-            destroyObject(finishCommandDefinition_)
-            destroyObject(startCommandControlPanel_)
-            destroyObject(startCommandDefinition_)
-            destroyObject
+    #         destroyObject(commandControlPanel_)
+    #         destroyObject(CommandDefinition_)
+    #         destroyObject(exportCommandControlPanel_)
+    #         destroyObject(exportCommandDefinition_)
+    #         destroyObject(importCommandControlPanel_)
+    #         destroyObject(importCommandDefinition_)
+    #         destroyObject(finishCommandControlPanel_)
+    #         destroyObject(finishCommandDefinition_)
+    #         destroyObject(startCommandControlPanel_)
+    #         destroyObject(startCommandDefinition_)
+    #         destroyObject
 
-            handlers.clear()
+    #         handlers.clear()
 
-        except:
-            logger.exception('AddIn Stop Failed: {}'.format(traceback.format_exc()))
+    #     except:
+    #         logger.exception('AddIn Stop Failed: {}'.format(traceback.format_exc()))
 
 
     # @eventHandler(adsk.core.InputChangedEventHandler)
@@ -500,347 +501,347 @@ class Fusion360CommandBase:
 #         except:
 #             logger.exception('AddIn Stop Failed: {}'.format(traceback.format_exc()))
 
-class ExecutePreviewHandler(adsk.core.CommandEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("ExecutePreviewHandler")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("ExecutePreviewHandler.notify")
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+# class ExecutePreviewHandler(adsk.core.CommandEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("ExecutePreviewHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("ExecutePreviewHandler.notify")
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
 
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
 
-        logger.info('Preview: {} execute preview event triggered'.format(command_.parentCommandDefinition.id))
+#         logger.info('Preview: {} execute preview event triggered'.format(command_.parentCommandDefinition.id))
     
-        try:               
-            self.myObject_.onPreview(command_, inputs_, args)
-        except:
-            logger.exception('Execute preview event failed: {}'.format(traceback.format_exc()))
+#         try:               
+#             self.myObject_.onPreview(command_, inputs_, args)
+#         except:
+#             logger.exception('Execute preview event failed: {}'.format(traceback.format_exc()))
 
-class DestroyHandler(adsk.core.CommandEventHandler):
-    def __init__(self, myObject):
-        logger.info("DestroyHandler")
-        super().__init__()
-        self.myObject_ = myObject
-    def notify(self, args:adsk.core.CommandEventArgs):
-        logger.info("DestroyHandler")
-        # Code to react to the event.
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+# class DestroyHandler(adsk.core.CommandEventHandler):
+#     def __init__(self, myObject):
+#         logger.info("DestroyHandler")
+#         super().__init__()
+#         self.myObject_ = myObject
+#     def notify(self, args:adsk.core.CommandEventArgs):
+#         logger.info("DestroyHandler")
+#         # Code to react to the event.
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
 
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
-        reason_ = args.terminationReason
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
+#         reason_ = args.terminationReason
 
-        logger.info(f'Command: {command_.parentCommandDefinition.id} destroyed')
-        reasons = {0:"Unknown", 1:"OK", 2:"Cancelled", 3:"Aborted", 4:"PreEmpted Termination", 5:"Document closed"}
-        logger.info("Reason for termination = " + reasons[reason_])
+#         logger.info(f'Command: {command_.parentCommandDefinition.id} destroyed')
+#         reasons = {0:"Unknown", 1:"OK", 2:"Cancelled", 3:"Aborted", 4:"PreEmpted Termination", 5:"Document closed"}
+#         logger.info("Reason for termination = " + reasons[reason_])
 
-        try:
-            self.myObject_.onDestroy(command_, inputs_, reason_)
+#         try:
+#             self.myObject_.onDestroy(command_, inputs_, reason_)
             
-        except:
-            logger.exception('Input changed event failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('Input changed event failed: {}'.format(traceback.format_exc()))
 
-class InputChangedHandler(adsk.core.InputChangedEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("InputChangedHandler")
-        self.myObject_ = myObject
-    def notify(self, args:adsk.core.InputChangedEventArgs):
-        logger.info("InputChangedHandler")
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+# class InputChangedHandler(adsk.core.InputChangedEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("InputChangedHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args:adsk.core.InputChangedEventArgs):
+#         logger.info("InputChangedHandler")
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
 
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
-        changedInput_ = args.input 
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
+#         changedInput_ = args.input 
 
-        logger.info('Input: {} changed event triggered'.format(command_.parentCommandDefinition.id))
-        logger.info('The Input: {} was the command'.format(changedInput_.id))
+#         logger.info('Input: {} changed event triggered'.format(command_.parentCommandDefinition.id))
+#         logger.info('The Input: {} was the command'.format(changedInput_.id))
    
-        try:
-            self.myObject_.onInputChanged(command_, inputs_, changedInput_)
-        except:
-            logger.exception('Input changed event failed: {}'.format(traceback.format_exc()))
+#         try:
+#             self.myObject_.onInputChanged(command_, inputs_, changedInput_)
+#         except:
+#             logger.exception('Input changed event failed: {}'.format(traceback.format_exc()))
 
-class CommandExecuteHandler(adsk.core.CommandEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("CommandExecuteHandler")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("CommandExecuteHandler")
-        app = adsk.core.Application.get()
-        ui = app.userInterface
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
+# class CommandExecuteHandler(adsk.core.CommandEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("CommandExecuteHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("CommandExecuteHandler")
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
 
-        try:
-            # global handlers
-            logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onExecute(command_, inputs_)
+#         try:
+#             # global handlers
+#             logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onExecute(command_, inputs_)
             
-        except:
-            logger.exception('command executed failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command executed failed: {}'.format(traceback.format_exc()))
 
-class StartExecuteHandler(adsk.core.CommandEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("StartExecuteHandler")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("StartExecuteHandler")
-        # global handlers
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+# class StartExecuteHandler(adsk.core.CommandEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("StartExecuteHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("StartExecuteHandler")
+#         # global handlers
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
 
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
 
-        logger.info(f'command: {command_.parentCommandDefinition.id} executed successfully')
+#         logger.info(f'command: {command_.parentCommandDefinition.id} executed successfully')
 
-        try:
-            self.myObject_.onStartExecute(command_, inputs_)
-            # adsk.autoTerminate(False)
+#         try:
+#             self.myObject_.onStartExecute(command_, inputs_)
+#             # adsk.autoTerminate(False)
             
-        except:
-            logger.exception('command executed failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command executed failed: {}'.format(traceback.format_exc()))
 
-class ExportCommandExecuteHandler(adsk.core.CommandEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("ExportCommandExecuteHandler")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("ExportCommandExecuteHandler")
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+# class ExportCommandExecuteHandler(adsk.core.CommandEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("ExportCommandExecuteHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("ExportCommandExecuteHandler")
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
 
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
 
-        logger.info(f'command: {command_.parentCommandDefinition.id} executed successfully')
-        try:
-            # global handlers
-            self.myObject_.onExportExecute(command_, inputs_)
-            # adsk.autoTerminate(False)
+#         logger.info(f'command: {command_.parentCommandDefinition.id} executed successfully')
+#         try:
+#             # global handlers
+#             self.myObject_.onExportExecute(command_, inputs_)
+#             # adsk.autoTerminate(False)
             
-        except:
-            logger.exception('command executed failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command executed failed: {}'.format(traceback.format_exc()))
 
-class ImportCommandExecuteHandler(adsk.core.CommandEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("ImportCommandExecuteHandler")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("ImportCommandExecuteHandler")
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+# class ImportCommandExecuteHandler(adsk.core.CommandEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("ImportCommandExecuteHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("ImportCommandExecuteHandler")
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
         
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
         
-        logger.info(f'command: {command_.parentCommandDefinition.id} executed successfully')
-        try:
-            # global handlers
-            self.myObject_.onImportExecute(command_, inputs_)
-            # adsk.autoTerminate(False)
+#         logger.info(f'command: {command_.parentCommandDefinition.id} executed successfully')
+#         try:
+#             # global handlers
+#             self.myObject_.onImportExecute(command_, inputs_)
+#             # adsk.autoTerminate(False)
             
-        except:
-            logger.exception('command executed failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command executed failed: {}'.format(traceback.format_exc()))
 
-class MouseClickHandler(adsk.core.MouseEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("MouseClickHandler")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("MouseClickHandler")
-        app = adsk.core.Application.get()
-        ui = app.userInterface
-        command_ = args.firingEvent.sender
-        inputs_ = command_.commandInputs
+# class MouseClickHandler(adsk.core.MouseEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("MouseClickHandler")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("MouseClickHandler")
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
+#         command_ = args.firingEvent.sender
+#         inputs_ = command_.commandInputs
         
-        kbModifiers = args.keyboardModifiers
-        logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#         kbModifiers = args.keyboardModifiers
+#         logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
         
-        try:
-            self.myObject_.onMouseClick(kbModifiers, command_, inputs_)
+#         try:
+#             self.myObject_.onMouseClick(kbModifiers, command_, inputs_)
             
-        except:
-            logger.exception('command mouseClick failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command mouseClick failed: {}'.format(traceback.format_exc()))
 
-class DocumentOpenedHandler(adsk.core.DocumentEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("DocumentOpenedHandler - init")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("DocumentOpenedEvent")
-        try:
-            command_ = args.firingEvent.sender
-            # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onDocumentOpened(command_, args)
+# class DocumentOpenedHandler(adsk.core.DocumentEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("DocumentOpenedHandler - init")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("DocumentOpenedEvent")
+#         try:
+#             command_ = args.firingEvent.sender
+#             # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onDocumentOpened(command_, args)
             
-        except:
-            logger.exception('command document Opened failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command document Opened failed: {}'.format(traceback.format_exc()))
 
-class DocumentSavingHandler(adsk.core.DocumentEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("DocumentSavingHandler - init")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("DocumentSavingEvent")
-        try:
-            command_ = args.firingEvent.sender
-            # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onDocumentSaving(command_, args)
+# class DocumentSavingHandler(adsk.core.DocumentEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("DocumentSavingHandler - init")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("DocumentSavingEvent")
+#         try:
+#             command_ = args.firingEvent.sender
+#             # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onDocumentSaving(command_, args)
             
-        except:
-            logger.exception('command document saved failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command document saved failed: {}'.format(traceback.format_exc()))
 
-class DocumentCreatedHandler(adsk.core.DocumentEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("DocumentCreatedHandler - init")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("DocumentCreatedEvent")
-        try:
-            command_ = args.firingEvent.sender
-            # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onDocumentCreated(command_, args)
+# class DocumentCreatedHandler(adsk.core.DocumentEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("DocumentCreatedHandler - init")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("DocumentCreatedEvent")
+#         try:
+#             command_ = args.firingEvent.sender
+#             # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onDocumentCreated(command_, args)
             
-        except:
-            logger.exception('command document saved failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command document saved failed: {}'.format(traceback.format_exc()))
 
-class DocumentSavedHandler(adsk.core.DocumentEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("DocumentSavedHandler - init")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("DocumentSavedEvent")
-        try:
-            command_ = args.firingEvent.sender
-            # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onDocumentSaved(command_, args)
+# class DocumentSavedHandler(adsk.core.DocumentEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("DocumentSavedHandler - init")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("DocumentSavedEvent")
+#         try:
+#             command_ = args.firingEvent.sender
+#             # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onDocumentSaved(command_, args)
             
-        except:
-            logger.exception('command document saved failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command document saved failed: {}'.format(traceback.format_exc()))
 
-class DocumentActivatedHandler(adsk.core.DocumentEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("DocumentActivatedHandler - init")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("DocumentActivatedEvent")
-        try:
-            command_ = args.firingEvent.sender
-            # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onDocumentActivated(command_, args)
+# class DocumentActivatedHandler(adsk.core.DocumentEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("DocumentActivatedHandler - init")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("DocumentActivatedEvent")
+#         try:
+#             command_ = args.firingEvent.sender
+#             # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onDocumentActivated(command_, args)
             
-        except:
-            logger.exception('command document activated failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command document activated failed: {}'.format(traceback.format_exc()))
 
-class DocumentDeactivatedHandler(adsk.core.DocumentEventHandler):
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("DocumentDeactivatedHandler - init")
-        self.myObject_ = myObject
-    def notify(self, args):
-        logger.info("DocumentDectivatedEvent")
-        try:
-            command_ = args.firingEvent.sender
-            # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
-            self.myObject_.onDocumentDeactivated(command_, args)
+# class DocumentDeactivatedHandler(adsk.core.DocumentEventHandler):
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("DocumentDeactivatedHandler - init")
+#         self.myObject_ = myObject
+#     def notify(self, args):
+#         logger.info("DocumentDectivatedEvent")
+#         try:
+#             command_ = args.firingEvent.sender
+#             # logger.info('command: {} executed successfully'.format(command_.parentCommandDefinition.id))
+#             self.myObject_.onDocumentDeactivated(command_, args)
             
-        except:
-            logger.exception('command document deactivated failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('command document deactivated failed: {}'.format(traceback.format_exc()))
 
-class CommandCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
+# class CommandCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
 
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("CommandCreatedEventHandler")
-        self.myObject_ = myObject
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("CommandCreatedEventHandler")
+#         self.myObject_ = myObject
 
-    def notify(self, args):
-        logger.info("CommandCreatedEvent")
+#     def notify(self, args):
+#         logger.info("CommandCreatedEvent")
 
-        app = adsk.core.Application.get()
-        ui = app.userInterface
+#         app = adsk.core.Application.get()
+#         ui = app.userInterface
 
-        command_ = args.command
-        inputs_ = command_.commandInputs
+#         command_ = args.command
+#         inputs_ = command_.commandInputs
             
-        try:
-            # global handlers
+#         try:
+#             # global handlers
             
-            onExecuteHandler_ = CommandExecuteHandler(self.myObject_) #onExecute()
-            handlers.append(onExecuteHandler_)
-            command_.execute.add(onExecuteHandler_)
+#             onExecuteHandler_ = CommandExecuteHandler(self.myObject_) #onExecute()
+#             handlers.append(onExecuteHandler_)
+#             command_.execute.add(onExecuteHandler_)
             
-            onInputChangedHandler_ = InputChangedHandler(self.myObject_)
-            handlers.append(onInputChangedHandler_)
-            command_.inputChanged.add(onInputChangedHandler_)
+#             onInputChangedHandler_ = InputChangedHandler(self.myObject_)
+#             handlers.append(onInputChangedHandler_)
+#             command_.inputChanged.add(onInputChangedHandler_)
             
-            onDestroyHandler_ = DestroyHandler(self.myObject_)
-            handlers.append(onDestroyHandler_)
-            command_.destroy.add(onDestroyHandler_)
+#             onDestroyHandler_ = DestroyHandler(self.myObject_)
+#             handlers.append(onDestroyHandler_)
+#             command_.destroy.add(onDestroyHandler_)
             
-            onExecutePreviewHandler_ = ExecutePreviewHandler(self.myObject_)
-            handlers.append(onExecutePreviewHandler_)
-            command_.executePreview.add(onExecutePreviewHandler_)
+#             onExecutePreviewHandler_ = ExecutePreviewHandler(self.myObject_)
+#             handlers.append(onExecutePreviewHandler_)
+#             command_.executePreview.add(onExecutePreviewHandler_)
        
-            onMouseClickHandler_ = MouseClickHandler(self.myObject_)
-            handlers.append(onMouseClickHandler_)
-            command_.mouseClick.add(onMouseClickHandler_)
+#             onMouseClickHandler_ = MouseClickHandler(self.myObject_)
+#             handlers.append(onMouseClickHandler_)
+#             command_.mouseClick.add(onMouseClickHandler_)
                    
-            logger.info('Panel command created successfully')
+#             logger.info('Panel command created successfully')
             
-            self.myObject_.onCreate(command_, inputs_)
+#             self.myObject_.onCreate(command_, inputs_)
 
-        except:
-            logger.exception('Panel command created failed: {}'.format(traceback.format_exc()))
+#         except:
+#             logger.exception('Panel command created failed: {}'.format(traceback.format_exc()))
 
-class ExportCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
+# class ExportCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
 
-    def __init__(self, myObject):
-        super().__init__()
-        logger.info("ExportCreatedEventHandler")
-        self.myObject_ = myObject
+#     def __init__(self, myObject):
+#         super().__init__()
+#         logger.info("ExportCreatedEventHandler")
+#         self.myObject_ = myObject
 
-    def notify(self, args):
-        logger.info("ExportCreatedEventHandler")
-        try:
-            # global handlers
+#     def notify(self, args):
+#         logger.info("ExportCreatedEventHandler")
+#         try:
+#             # global handlers
             
-            app = adsk.core.Application.get()
-            ui = app.userInterface
-            command_ = args.command
-            inputs_ = command_.commandInputs
+#             app = adsk.core.Application.get()
+#             ui = app.userInterface
+#             command_ = args.command
+#             inputs_ = command_.commandInputs
             
-            onExecuteHandler_ = ExportCommandExecuteHandler(self.myObject_)
-            handlers.append(onExecuteHandler_)
-            command_.execute.add(onExecuteHandler_)
+#             onExecuteHandler_ = ExportCommandExecuteHandler(self.myObject_)
+#             handlers.append(onExecuteHandler_)
+#             command_.execute.add(onExecuteHandler_)
                         
-            onDestroyHandler_ = DestroyHandler(self.myObject_)
-            handlers.append(onDestroyHandler_)
-            command_.destroy.add(onDestroyHandler_)
+#             onDestroyHandler_ = DestroyHandler(self.myObject_)
+#             handlers.append(onDestroyHandler_)
+#             command_.destroy.add(onDestroyHandler_)
                    
-            logger.info('Panel command created successfully')
+#             logger.info('Panel command created successfully')
             
-            self.myObject_.onExportCreate(command_, inputs_)
-        except:
-            logger.exception('Panel command created failed: {}'.format(traceback.format_exc()))
+#             self.myObject_.onExportCreate(command_, inputs_)
+#         except:
+#             logger.exception('Panel command created failed: {}'.format(traceback.format_exc()))
 
 # class ImportCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
 #     def __init__(self, myObject):
