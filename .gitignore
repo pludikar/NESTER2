@@ -1,6 +1,4 @@
 __pycache__/
 .idea/
-~$debug.xlsx
-debug.xlsx
-nester.log
-nester1.log
+*.xlsx
+*.log
