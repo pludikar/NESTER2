@@ -8377,3 +8377,178 @@ DEBUG; common; notify; 56; onDestroy handler notified: OnDestroy
 INFO; NesterCommand; onDestroy; 972; NesterCommand.onDestroy
 INFO; NesterCommand; onDestroy; 978; Command: Nester_start destroyed
 INFO; NesterCommand; onDestroy; 980; Reason for termination = OK
+INFO; NESTER; <module>; 36; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 670; init
+INFO; NesterCommand; onRun; 690; onRun
+DEBUG; common; handlerWrapper; 46; notify method created: onStartCreate
+DEBUG; common; handlerWrapper; 46; notify method created: onCreate
+DEBUG; common; handlerWrapper; 46; notify method created: onExportCreate
+DEBUG; common; handlerWrapper; 46; notify method created: onImportCreate
+DEBUG; common; handlerWrapper; 46; notify method created: onFinishCreate
+DEBUG; common; handlerWrapper; 46; notify method created: onDocumentOpened
+DEBUG; common; handlerWrapper; 46; notify method created: onDocumentSaving
+DEBUG; common; handlerWrapper; 46; notify method created: onDocumentSaved
+DEBUG; common; handlerWrapper; 46; notify method created: onDocumentCreated
+DEBUG; common; handlerWrapper; 46; notify method created: onDocumentActivated
+DEBUG; common; handlerWrapper; 46; notify method created: onDocumentDeactivated
+DEBUG; common; notify; 56; onStartCreate handler notified: CommandCreated
+DEBUG; common; handlerWrapper; 46; notify method created: onStartExecute
+DEBUG; common; handlerWrapper; 46; notify method created: onDestroy
+INFO; NesterCommand; onStartCreate; 1310; Finish Panel command created successfully
+DEBUG; common; notify; 56; onStartExecute handler notified: OnExecute
+DEBUG; NesterCommand; crawlAndCopy; 1387; new call; parent: rootComp; target: Manufacturing:1
+DEBUG; NesterCommand; crawlAndCopy; 1401; source occurrences: ['deepCupboard:1', 'shallowCupboard:1', 'deepCupboard:3', 'Manufacturing:1']
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on deepCupboard:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; deepCupboard:1: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; deepCupboard: 7 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: []
+INFO; NesterCommand; addNode; 196; NestItems.addNode
+DEBUG; NesterCommand; crawlAndCopy; 1429; Adding dummy component deepCupboard_ to Manufacturing:1
+DEBUG; NesterCommand; crawlAndCopy; 1387; new call; parent: deepCupboard:1; target: Manufacturing:1+deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1401; source occurrences: ['leftSide:1', 'bottom:1', 'back:1', 'top:1', 'rightSide:1', 'shelf:1', 'shelf:3']
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on leftSide:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; leftSide:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; leftSide: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: []
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component leftSide to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on bottom:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; bottom:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; bottom: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:202']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component bottom to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on back:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; back:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; back: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:202', 'bottom:193']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component back to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on top:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; top:1: 1 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; top: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:202', 'bottom:193', 'back:191']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component top to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on rightSide:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; rightSide:1: 2 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; rightSide: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:202', 'bottom:193', 'back:191', 'top:191']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component rightSide to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on shelf:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; shelf:1: 1 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; shelf: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:202', 'bottom:193', 'back:191', 'top:191', 'rightSide:191']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component shelf to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on shelf:3
+DEBUG; NesterCommand; crawlAndCopy; 1407; shelf:3: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; shelf: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:202', 'bottom:193', 'back:191', 'top:191', 'rightSide:191', 'shelf:380']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component shelf to deepCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on shallowCupboard:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; shallowCupboard:1: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; shallowCupboard: 8 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['deepCupboard_:1']
+INFO; NesterCommand; addNode; 196; NestItems.addNode
+DEBUG; NesterCommand; crawlAndCopy; 1429; Adding dummy component shallowCupboard_ to Manufacturing:1
+DEBUG; NesterCommand; crawlAndCopy; 1387; new call; parent: shallowCupboard:1; target: Manufacturing:1+shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1401; source occurrences: ['SH_leftSide:1', 'SH_bottom:1', 'SH_back:1', 'SH_top:1', 'SH_rightSide:1', 'SH_shelf:1', 'SH_shelf:2']
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_leftSide:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_leftSide:1: 2 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_leftSide: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: []
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_leftSide to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_bottom:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_bottom:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_bottom: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['SH_leftSide:88']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_bottom to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_back:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_back:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_back: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['SH_leftSide:88', 'SH_bottom:88']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_back to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_top:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_top:1: 1 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_top: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['SH_leftSide:88', 'SH_bottom:88', 'SH_back:88']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_top to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_rightSide:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_rightSide:1: 2 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_rightSide: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['SH_leftSide:88', 'SH_bottom:88', 'SH_back:88', 'SH_top:88']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_rightSide to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_shelf:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_shelf:1: 2 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_shelf: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['SH_leftSide:88', 'SH_bottom:88', 'SH_back:88', 'SH_top:88', 'SH_rightSide:88']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_shelf to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on SH_shelf:2
+DEBUG; NesterCommand; crawlAndCopy; 1407; SH_shelf:2: 1 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; SH_shelf: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['SH_leftSide:88', 'SH_bottom:88', 'SH_back:88', 'SH_top:88', 'SH_rightSide:88', 'SH_shelf:175']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component SH_shelf to shallowCupboard_:1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on deepCupboard:3
+DEBUG; NesterCommand; crawlAndCopy; 1407; deepCupboard:3: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; deepCupboard: 7 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['deepCupboard_:1', 'shallowCupboard_:1']
+INFO; NesterCommand; addNode; 196; NestItems.addNode
+DEBUG; NesterCommand; crawlAndCopy; 1429; Adding dummy component deepCupboard_ (1) to Manufacturing:1
+DEBUG; NesterCommand; crawlAndCopy; 1387; new call; parent: deepCupboard:3; target: Manufacturing:1+deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1401; source occurrences: ['leftSide:1', 'bottom:1', 'back:1', 'top:1', 'rightSide:1', 'shelf:1', 'shelf:3']
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on leftSide:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; leftSide:1: 2 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; leftSide: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: []
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component leftSide to deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on bottom:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; bottom:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; bottom: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:203']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component bottom to deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on back:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; back:1: 3 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; back: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:203', 'bottom:194']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component back to deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on top:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; top:1: 1 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; top: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:203', 'bottom:194', 'back:192']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component top to deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on rightSide:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; rightSide:1: 2 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; rightSide: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:203', 'bottom:194', 'back:192', 'top:192']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component rightSide to deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on shelf:1
+DEBUG; NesterCommand; crawlAndCopy; 1407; shelf:1: 1 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; shelf: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:203', 'bottom:194', 'back:192', 'top:192', 'rightSide:192']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component shelf to deepCupboard_ (1):1
+DEBUG; NesterCommand; crawlAndCopy; 1406; Working on shelf:3
+DEBUG; NesterCommand; crawlAndCopy; 1407; shelf:3: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1408; shelf: 0 joints
+DEBUG; NesterCommand; crawlAndCopy; 1414; target sourceOccurrences: ['leftSide:203', 'bottom:194', 'back:192', 'top:192', 'rightSide:192', 'shelf:382']
+INFO; NesterCommand; addItem; 188; NestItems.addItem
+DEBUG; NesterCommand; crawlAndCopy; 1423; Adding existing component shelf to deepCupboard_ (1):1
+DEBUG; common; notify; 56; onDestroy handler notified: OnDestroy
+INFO; NesterCommand; onDestroy; 972; NesterCommand.onDestroy
+INFO; NesterCommand; onDestroy; 978; Command: Nester_start destroyed
+INFO; NesterCommand; onDestroy; 980; Reason for termination = OK
