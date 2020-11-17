@@ -3,7 +3,7 @@ import weakref
 import adsk.core, adsk.fusion
 from typing import Callable, List, NamedTuple
 
-from functools import wraps
+from functools import wraps, lru_cache
 
 class Handler(NamedTuple):
     handler: any
@@ -21,7 +21,8 @@ NESTER_WORKSPACE = 'NesterEnvironment'  #Not used
 NESTER_GROUP = 'NesterGroup' #for attributes
 NESTER_OCCURRENCES = 'NesterOccurrences'
 NESTER_TOKENS = 'NesterTokens'
-NESTER_TYPE = 'NesterType'  # to identify item vs stock
+NESTER_TYPE = 'NesterType'  # to identify item vs stock vs node
+# NESTER_TREE = 'NesterTree'  # to identify manufacturing browser tree structure
 
 app = adsk.core.Application.get()
 ui = app.userInterface
@@ -97,6 +98,7 @@ class Button(adsk.core.ButtonControlDefinition):
 
 def makeTempFaceVisible(method):
     @wraps(method)
+    @lru_cache
     def wrapper (*args, **kwargs):
 
         # Create a base feature
@@ -117,9 +119,12 @@ def makeTempFaceVisible(method):
 def entityFromToken(method):
     @wraps(method)
     def wrapper(*args, **kwargs):
-        entityToken = method(*args, **kwargs)
-        entity = design.findEntityByToken(entityToken)
-        return entity[0]
+        try:
+            entityToken = method(*args, **kwargs)
+            entity = design.findEntityByToken(entityToken)
+            return entity[0]
+        except:
+            return None
     return wrapper
 
 
