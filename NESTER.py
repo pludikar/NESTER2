@@ -28,10 +28,10 @@ streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
 
 from . import NesterCommand
-from  .common import _nestItemsDict
+from  .common import *
 
 app = adsk.core.Application.get()
-_nestItems = _nestItemsDict.setdefault(app.activeDocument.name, NesterCommand.NestItems())
+_nestItems = nestFacesDict.setdefault(app.activeDocument.name, NesterCommand.NestItems())
 
 logger.info('------------------------------start------------------------------')
 

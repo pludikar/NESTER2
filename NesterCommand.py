@@ -120,38 +120,50 @@ class NestItems():
     Top level nest item management
     Keeps track of all stock and nest objects
     """
-    _document = app.activeDocument.name
-    _nestObjects =[]
-    _stockObjects = []
-    _nodeObjects = []
-    
-    _positionOffset = 0
-    _spacing = 0
 
-    _addedFaces = []
-    _removedFaces = []
-
-    _addedStock = []
-    _removedStock = []
 
     def __init__(self):
-        nestAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TYPE)
+        nestTypeAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TYPE)
+        nestTokensAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TOKENS)
 
-        for nestAttribute in nestAttributes:
+        # result = map(lambda x: x.deleteMe(), [a for a in nestTypeAttributes if  not a.parent]) 
+        # result = map(lambda x: x.deleteMe(), [a for a in nestTokensAttributes if not a.parent])
+
+        # nestTypeAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TYPE)
+        # nestTokensAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TOKENS)
+
+
+        self._document = app.activeDocument.name
+        self._stockObjects = []
+        self._itemObjects = []
+        
+        self._positionOffset = 0
+        self._spacing = 0
+
+        self._addedFaces = []
+        self._removedFaces = []
+
+        self._addedStock = []
+        self._removedStock = []
+
+
+        for nestAttribute in nestTypeAttributes:
             try:
-                if not nestAttribute.parent: 
-                    raise AttributeError()  #Could have just done an if else, but this way it reminds me
+                logger.debug(f'attribute {nestAttribute.groupName}/{nestAttribute.name}:{nestAttribute.value}')
+                assert nestAttribute.parent
                 if nestAttribute.value == 'Item' :
                     self.addItem(item = nestAttribute.parent) 
                     logger.debug(f'found and added nestItem: {nestAttribute.parent.name} ')
-                elif nestAttribute.value == 'stock':
-                    self.addStock(item = nestAttribute.parent)
+                elif nestAttribute.value == 'Stock':
+                    self.addStock(stockOccurrence = nestAttribute.parent)
                     logger.debug(f'found and added stockItem: {nestAttribute.parent.name}')
-                elif nestAttribute.value == 'Node':
-                    self.addNode(item = nestAttribute.parent)
+
+            except AssertionError:
+                nestAttribute.deleteMe()
+                continue
 
             except AttributeError:
-                nestAttribute.deleteMe() #TODO indicates that the object is deleted too  
+                nestAttribute.deleteMe() #TODO indicates that the object is deleted too 
 
 
     def save(self):
@@ -176,61 +188,79 @@ class NestItems():
                 nestAttribute.deleteMe() #TODO indicates that the object is deleted too  
 
     def __iter__(self):
-        for f in self._nestObjects:
+        for f in self.nestObjects:
             yield f
 
     def __next__(self):
-        for f in self._nestObjects:
+        for f in self.nestObjects:
             yield f
 
-    def addItem(self, item:adsk.fusion.Component):
+    def getItem(self, entity):
+        try:
+            return self._itemObjects[self._itemObjects.index(entity)]#list(filter(lambda x: x == entity, self._itemObjects))
+        except ValueError:
+            if isinstance(entity, adsk.fusion.BRepFace):
+                return NestItem(entity.assemblyContext)
+            elif isinstance(entity, adsk.fusion.Occurrence):
+                return NestItem(entity)
+        finally:
+            return False
+
+    def getStock(self, entity):
+        try:
+            return self.stockObjects[self.stockObjects.index(entity)]#list(filter(lambda x: x == entity, self._itemObjects))
+        except ValueError:
+            if isinstance(entity, adsk.fusion.BRepFace):
+                return NestStock(entity.assemblyContext)
+            elif isinstance(entity, adsk.fusion.Occurrence):
+                return NestStock(entity)
+        finally:
+            return False
+      
+    def addItem(self, item:adsk.fusion.Occurrence):
         try:
             logger.info("NestItems.addItem")
-            item.attributes.add(NESTER_GROUP, NESTER_TYPE, "Item")
-            self._nestObjects.append(NestItem(item = item)) 
+            self._itemObjects.append(NestItem(item = item)) 
         except:
             pass    
-    
-    def addNode(self, item:adsk.fusion.Component, sourceItem:adsk.fusion.Component = None):
+
+    def remove(self, entity):
         try:
-            logger.info("NestItems.addNode")
-            item.attributes.add(NESTER_GROUP, NESTER_TYPE, "Node")
-            self._nodeObjects.append(NestItem(item = item , sourceItem = sourceItem)) 
-        except:
+            del self._itemObjects[self._itemObjects.index(entity)]
+            self._itemObjects.remove(entity)
+        except ValueError:
             pass
+        try:
+            del self._itemObjects[self._itemObjects.index(entity)]
+            self._itemObjects.remove(entity)
+        except ValueError:
+            return False
+        return True
 
-    def add(self, itemFace:adsk.fusion.Component, stockFace:adsk.fusion.Component):
-        logger.info("NestItems.add")
-        if selectedFace in self._nestObjects:
-            return
-        faceObject:NestItem = self._nestObjects[itemFace]
-        faceObject.selectedFace = itemFace
-        faceObject.stock = stockFace
-
-    def remove(self, body):
-        pass
-
-    def addStock(self, stockComponent:adsk.fusion.Component):
+    def addStock(self, stockOccurrence:adsk.fusion.Occurrence):
         logger.info("NestItems.addStock")
-        stockObject = NestStock(item = stockComponent)
-        newComponent.attributes.add(NESTER_GROUP, NESTER_TYPE, "Stock")
+        stockObject = NestStock(item = stockOccurrence)
+        stockOccurrence.attributes.add(NESTER_GROUP, NESTER_TYPE, "Stock")
         self._stockObjects.append(stockObject)
 
     def removeStock(self, selectedFace):
         pass
-
 
     @property
     def stockObjects(self):
         return self._stockObjects
 
     @property
-    def nodeObjects(self):
-        return self._nodeObjects + self._nestObjects + self._stockObjects
+    def nestObjects(self):
+        return self._itemObjects + self._stockObjects
 
     @property
-    def allFaces(self):
-        return self._nestObjects
+    def allItemFaces(self):
+        return [o.selectedFace for o in self.nestObjects if o.selectedFace]
+
+    @property
+    def allStockFaces(self):
+        return [o.selectedFace for o in self.stockObjects if o.selectedFace]
 
     @property
     def addedStock(self):
@@ -245,35 +275,32 @@ class NestItems():
         return [x for x in self._stockObjects if x.removed]
 
     @property
-    def addedFaces(self):
-        return [x for x in self._nestObjects if x.added]
+    def addedItems(self):
+        return [x for x in self._itemObjects if x.added]
 
     @property
-    def removedFaces(self):
-        return [x for x in self._nestObjects if x.removed]
+    def removedItems(self):
+        return [x for x in self._itemObjects if x.removed]
 
     @property
-    def changedFaces(self):
-        return [x for x in self._nestObjects if x.changed]
+    def changedItems(self):
+        return [x for x in self._itemObjects if x.changed]
     
-    def find(self, selectedEnity):
-        return [face for face in self._nestObjects if face == selectedEntity][0]  # this should work for both bRepFace and bRepBody
-
     def refreshOffsets(self):
         logger.info("NestItems.refreshOffsets")
         for stock in self._stockObjects:
             positionOffset = 0
             positionOffset += stock.offset
 
-            for face in self._nestObjects:
+            for itemObject in self._itemObjects:
                 positionOffset += self._spacing
-                positionOffset += face.offset
-                face.positionOffset = positionOffset
+                positionOffset += itemObject.offset
+                itemObject.positionOffset = positionOffset
                 # adsk.doEvents()
 
     @property
     def reset(self):
-       self._nestObjects = []
+       self._itemObjects = []
        self._stockObjects = []
        self._positionOffset = 0
        self._spacing = 1
@@ -292,14 +319,16 @@ class NestStock():
         tokenAttribute = item.attributes.itemByName(NESTER_GROUP, NESTER_TOKENS)
         if tokenAttribute:
             self.loadVars(tokenAttribute)
+            self.selectedFace = None
         else:
             # logger.info("NestStock.init")
-            self._selectedFaceToken = None
-
-            self._bodyToken = item.bRepBodies[0].entityToken if item.bRepBodies else None #TODO - check what happens if more than one body
-                # occurrence = selectedFace.body.createForAssemblyContext
             self._occurrenceToken  = item.entityToken
             self._sourceOccurrenceToken  = sourceItem.entityToken if sourceItem else None
+
+            self._selectedFaceToken = None
+
+            # self._body = self.occurrence.bRepBodies[0] #item.bRepBodies[0].entityToken if item.bRepBodies else None #TODO - check what happens if more than one body
+                # occurrence = selectedFace.body.createForAssemblyContext
 
             self._profileToken = None
 
@@ -316,6 +345,8 @@ class NestStock():
             self._changed = False
             self._added = True
             self._removed = False
+        if type(self) == NestStock:
+            item.attributes.add(NESTER_GROUP, NESTER_TYPE, 'Stock')
             self.saveVars()
 
     def __eq__(self, other):
@@ -392,7 +423,7 @@ class NestStock():
         varsDict = {k: v for k, v in varsDict.items() if not callable(v)} #only include variables that are not functions or methods
         data = json.dumps(varsDict)
 
-        nesterAttrbs = attributes.add(NESTER_GROUP, NESTER_TOKENS, data)    
+        nesterAttrbs = self.occurrence.attributes.add(NESTER_GROUP, NESTER_TOKENS, data)    
         
     def loadVars(self, attribute):
         try:
@@ -440,9 +471,8 @@ class NestStock():
         return self._selectedFaceToken
 
     @property
-    @entityFromToken
     def body(self):
-        return self._bodyToken
+        return self.occurrence.bRepBodies[0]
 
     @property
     def height(self):
@@ -495,13 +525,10 @@ class NestStock():
 
     @selectedFace.setter
     def selectedFace(self, selected:adsk.fusion.BRepFace):
-        logger.info('selectedFace {}'.format(selected.assemblyContext.name))
-        if selected == self._selectedFace:
-            return
-        self.selectedFace = selected
-        self.occurrence = selected.assemblyContext
-        self.body = selected.body
+        logger.info(f'selectedFace {selected.assemblyContext.name}')
+        self._selectedFaceToken = selected.entityToken
         self.changed = True
+        self.saveVars()
 
     @property
     @entityFromToken
@@ -555,8 +582,9 @@ class NestItem(NestStock):
         self._xPositionOffset = 0
         self._yPositionOffset = 0
         self._angle = 0
+        kwargs['item'].attributes.add(NESTER_GROUP, NESTER_TYPE, 'Item')
         self.saveVars()
-        # self._stockObject = stockObject
+        self._stockObject = None #kwargs['sourceItem']
 
     def addJoint(self):
         logger.info(f"NestItem.addJoint - {self.occurrence.name}/{self._stockObject.jointOrigin.name}")
@@ -600,7 +628,7 @@ class NestItem(NestStock):
         self._xOffset = utils.getBoundingBoxExtent(self.body)/2
 
     def changeJoint(self):
-        logger.info("NestItem.changeJoint - {}/{}".format(self.occurrence.name, self.stockObject.jointOrigin.name ))
+        logger.info(f"NestItem.changeJoint - {self.occurrence.name}/{self.stock.jointOrigin.name}")
 
         logger.debug(f'bounding box before joint; {self.body.boundingBox.minPoint.x: 9.3f}; \
                                                 {self.body.boundingBox.minPoint.y: 9.3f}; \
@@ -633,8 +661,13 @@ class NestItem(NestStock):
         self._xOffset = utils.getBoundingBoxExtent(self.body)/2
 
     @property
+    @entityFromToken
     def stock(self):
-        return self._stockObject
+        return self._stockObjectToken
+
+    @stock.setter
+    def stock(self, newStock):
+        self._stockObjectToken = newStock.entityToken
 
     @property
     def xPositionOffset(self):  # gets the position of the bodyCentre joint origin relative to the centre of the stock
@@ -933,21 +966,21 @@ class NesterCommand:
         logger.debug('spacing; {}'.format(self._nestItems.spacing))
 
         for stockObject in self._nestItems.addedStock:
-            logger.debug(f'working on added stockObjects: {stockObject.name}:{stockObject.tempId:d}')
+            logger.debug(f'working on added stockObjects: {stockObject.name}')
             logger.debug('calling addJointOrigin; stockObject add loop')
             stockObject.addJointOrigin()
             stockObject.added = False
 
         for face in self._nestItems.changedFaces:
             marker = design.timeline.markerPosition
-            logger.debug(f'working on changed face: {face.name}:{face.tempId:d}')
+            logger.debug(f'working on changed face: {face.name}')
             logger.debug(f'calling changeJointOrigin; face change loop')
             face.changeJoint()
             face.changed = False
             design.timeline.markerPosition = marker
     
         for face in self._nestItems.addedFaces:
-            logger.debug(f'working on adding face: {face.name}:{face.tempId:d}')
+            logger.debug(f'working on adding face: {face.name}')
             logger.debug(f'calling addJointOrigin; face add loop')
             face.addJointOrigin()
             face.addJoint()
@@ -999,33 +1032,35 @@ class NesterCommand:
                     
         activeSelections = self.ui.activeSelections.all #save active selections - selections are sensitive and fragile, any processing beyond just reading on live selections will destroy selection 
         bodySelections = self.ui.activeSelections.all
-        neststockObjects = [stockObject.selectedFace for stockObject in self._nestItems.stockObjects]
-        nestFaces = [stockObject.selectedFace for stockObject in self._nestItems.allFaces]
+        nestStockFaces = self._nestItems.allStockFaces #[stockObject.selectedFace for stockObject in self._nestItems.stockObjects]
+        nestFaces = self._nestItems.allItemFaces #[stockObject.selectedFace for stockObject in self._nestItems.allFaces if stockObject.selectedFace]
 
         if changedInput.id == command.parentCommandDefinition.id + '_stockObject':
-            addedstockObjects = [stockObjectFace for stockObjectFace in activeSelections if (stockObjectFace not in neststockObjects) and (stockObjectFace not in nestFaces) ]
-            logger.debug('added stockObjects {}'.format([x.assemblyContext.name for x in addedstockObjects]))
-            removedstockObjects = [stockObjectFace for stockObjectFace in neststockObjects if stockObjectFace not in activeSelections ]
-            logger.debug('removed stockObjects {}'.format([x.assemblyContext.name for x in removedstockObjects]))
+            addedstockFaces:adsk.fusion.BRepFaces = [stockObjectFace for stockObjectFace in activeSelections if (stockObjectFace not in nestStockFaces) and (stockObjectFace not in nestFaces) ]
+            logger.debug('added stockObjects {}'.format([x.assemblyContext.name for x in addedstockFaces]))
+            removedstockFaces = [stockObjectFace for stockObjectFace in nestStockFaces if stockObjectFace not in activeSelections ]
+            logger.debug('removed stockObjects {}'.format([x.assemblyContext.name for x in removedstockFaces]))
             changedInput.commandInputs.itemById(command.parentCommandDefinition.id + '_selection').hasFocus = True
-            for stockObject in addedstockObjects:
-                if addedstockObjects:
-                    self._nestItems.addStock(stockObject)
+            for stockFace in addedstockFaces:
+                stockObject = self._nestItems.getStock(stockFace)
+                if addedstockFaces:
+                    stockObject.selectedFace =  stockFace #self._nestItems.addStock(stockFace)
                     # self.ui.activeSelections.all = activeSelections
-                if removedstockObjects:
-                    self._nestItems.removeStock(stockObject)
-                return
+                if removedstockFaces:
+                    self._nestItems.removeStock(stockFace.assemblyContext)
+            return
 
         #remove stock faces from selection collection
         for stockObjectFace in self._nestItems.stockObjects:
             bodySelections.removeByItem(stockObjectFace.selectedFace)
 
-        bodyList = [x.selectedFace.body for x in self._nestItems._nestObjects]
-        
+
+#TODO
+        bodyList = [x.selectedFace.body for x in self._nestItems.nestObjects if x.selectedFace] 
         for stockObject in self._nestItems.stockObjects:
 
             addedFaces = [face for face in bodySelections if face not in nestFaces ]
-            logger.debug('added faces {[x.assemblyContext.name for x in addedFaces]}')
+            logger.debug(f'added faces {[x.assemblyContext.name for x in addedFaces]}')
             removedFaces = [face for face in nestFaces if face not in bodySelections ]
             logger.debug(f'removed faces {[x.assemblyContext.name for x in removedFaces]}')
 
@@ -1052,18 +1087,21 @@ class NesterCommand:
             #==============================================================================
                      
                 selectedFace = face
-                if face != utils.getTopFace(face):
+                if face != utils.getTopFace(face):  #if face is other than topface on same body, then swap out existing face with new face
                      ui.activeSelections.removeByEntity(face)
                      selectedFace = utils.getTopFace(face)
                      changedInput.addSelection(selectedFace)
 
-                faceObject = [o for o in self._nestItems if o == selectedFace.body]
+                faceObject = self._nestItems.get(face, NestItem)
 
                 if len(faceObject):
                     faceObject = faceObject[0]
                     if faceObject != face:
-                        status = ui.activeSelections.removeByEntity(faceObject.selectedFace)
-                        logger.debug(f'selection status {status} ')
+                        try:
+                            status = ui.activeSelections.removeByEntity(faceObject.selectedFace)
+                            logger.debug(f'selection status {status} ')
+                        except RuntimeError:
+                            pass                            
                         faceObject.selectedFace = face
                         faceObject.changed = True
                         return
@@ -1279,12 +1317,16 @@ class NesterCommand:
                                             unitsMgr.defaultLengthUnits,
                                             adsk.core.ValueInput.createByReal(2.54))
 
-        if self._nestItems.allFaces:
-            for stock in self._nestItems.stockObjects:
-                selectionstockObjectInput.addSelection(stock.selectedFace)
-            for face in self._nestItems.allFaces:
-                selectionInput.addSelection(face.selectedFace)
+        try:
+            for stockFace in self._nestItems.allStockFaces:
+                selectionstockObjectInput.addSelection(stockFace)
+            for face in self._nestItems.allItemFaces:
+                selectionInput.addSelection(face)
                 selectionInput.hasFocus = True
+        except RuntimeError:
+            pass
+        except AttributeError:
+            pass
 
         self.onExecute(command.execute) 
 
@@ -1391,7 +1433,7 @@ class NesterCommand:
         sourceOccurrences = [o for o in childOccurrences if 'Manufacturing' not in o.component.name] 
 
         targetChildren = target.childOccurrences
-        targetChildrenFromNestObjects = list(filter(lambda object: object.parentName == target.name, self._nestItems.nodeObjects))
+        targetChildrenFromNestObjects = list(filter(lambda object: object.parentName == target.name, self._nestItems.nestObjects))
 
         sourcesOfTargets = [n.sourceOccurrence for n in targetChildrenFromNestObjects]
 
@@ -1438,7 +1480,7 @@ class NesterCommand:
                 # - add dummy component to target if there are source child occurrences ie it's a node
                 newTargetOccurrence = target.component.occurrences.addNewComponent(sourceOccurrence.transform).createForAssemblyContext(target)
                 newTargetOccurrence.component.name = sourceOccurrence.component.name + '_'
-                self._nestItems.addNode(item = newTargetOccurrence, sourceItem = sourceOccurrence)
+                self._nestItems.addItem(item = newTargetOccurrence)  #, sourceItem = sourceOccurrence)
                 logger.debug(f'Adding dummy component {newTargetOccurrence.component.name} to {target.name}')
 
             if sourceOccurrence.childOccurrences:  #if the source component has children - then recurse component to find and process children 

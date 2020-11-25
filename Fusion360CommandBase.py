@@ -2,8 +2,8 @@
 import adsk.core, adsk.fusion, traceback
 
 import logging, os, sys
-from  .common import _nestItemsDict, handlers
-from .common import eventHandler
+from  .common import *
+# from .common import eventHandler
 
 logger = logging.getLogger('Nester.F360CommandBase')
 # logger.setLevel(logging.DEBUG)

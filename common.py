@@ -32,7 +32,7 @@ design :adsk.fusion.Design = app.activeProduct
 rootComp = design.rootComponent
 
 
-_nestItemsDict = {}
+nestFacesDict = {}
 
 logger = logging.getLogger('Nester.common')
 
@@ -98,7 +98,6 @@ class Button(adsk.core.ButtonControlDefinition):
 
 def makeTempFaceVisible(method):
     @wraps(method)
-    @lru_cache
     def wrapper (*args, **kwargs):
 
         # Create a base feature
@@ -116,13 +115,15 @@ def makeTempFaceVisible(method):
         return tempBody
     return wrapper
 
+cacheDict = {}
 def entityFromToken(method):
+
     @wraps(method)
     def wrapper(*args, **kwargs):
         try:
             entityToken = method(*args, **kwargs)
-            entity = design.findEntityByToken(entityToken)
-            return entity[0]
+            entity = cacheDict.setdefault(entityToken, design.findEntityByToken(entityToken)[0])
+            return entity
         except:
             return None
     return wrapper
