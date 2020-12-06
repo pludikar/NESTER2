@@ -1,4 +1,4 @@
-import logging
+import logging, sys, gc
 import weakref
 import adsk.core, adsk.fusion
 from typing import Callable, List, NamedTuple
@@ -10,31 +10,7 @@ class Handler(NamedTuple):
     event: any #weakref.ReferenceType
 handlers: List[Handler] = []
 
-CMD_ID = 'Nester'
-RESOURCE_FOLDER = './resources'
-COMMAND_NAME = 'Nester'
-
-COMMAND_DESRIPTION = 'Basic Nesting for Fusion 360'
-DESIGN_WORKSPACE = 'FusionSolidEnvironment'
-NESTER_WORKSPACE = 'NesterEnvironment'  #Not used
-
-NESTER_GROUP = 'NesterGroup' #for attributes
-NESTER_OCCURRENCES = 'NesterOccurrences'
-NESTER_TOKENS = 'NesterTokens'
-NESTER_TYPE = 'NesterType'  # to identify item vs stock vs node
-# NESTER_TREE = 'NesterTree'  # to identify manufacturing browser tree structure
-
-app = adsk.core.Application.get()
-ui = app.userInterface
-design :adsk.fusion.Design = app.activeProduct
-
-# Get the root component of the active design
-rootComp = design.rootComponent
-
-
-nestFacesDict = {}
-
-logger = logging.getLogger('Nester.common')
+logger = logging.getLogger('Nester.decorators')
 
 # Decorator to add eventHandler
 def eventHandler(handler_cls):
@@ -66,7 +42,15 @@ def eventHandler(handler_cls):
         return handlerWrapper
     return decoratorWrapper
 
-
+# Decorator to add debugger dict Clearing
+def clearDebuggerDict(method):
+    def decoratorWrapper(*args, **kwargs):
+        rtn = method(*args, **kwargs)
+        sys.modules['_pydevd_bundle.pydevd_xml'].__dict__['_TYPE_RESOLVE_HANDLER']._type_to_resolver_cache = {}
+        sys.modules['_pydevd_bundle.pydevd_xml'].__dict__['_TYPE_RESOLVE_HANDLER']._type_to_str_provider_cache = {}
+        logger.debug(f'gc.collect count = {gc.collect()}')
+        return rtn
+    return decoratorWrapper
 
 class Button(adsk.core.ButtonControlDefinition):
     def __init__():
@@ -116,6 +100,7 @@ def makeTempFaceVisible(method):
     return wrapper
 
 cacheDict = {}
+
 def entityFromToken(method):
 
     @wraps(method)

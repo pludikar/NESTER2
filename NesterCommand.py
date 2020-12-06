@@ -5,10 +5,17 @@ import json
 logger = logging.getLogger('Nester.command')
 # logger.setLevel(logging.DEBUG)
 
-from . import Fusion360CommandBase, utils
-# from .common import nestFacesDict, handlers
-# from .common import eventHandler
-from .common import *
+from .common.constants import *
+from .common.decorators import entityFromToken, eventHandler, handlers
+from .common import utils
+
+from . import Fusion360CommandBase #, utils
+
+if debugging:
+    import importlib
+    importlib.reload(Fusion360CommandBase)
+    importlib.reload(utils)
+    # importlib.reload(common)
 
 # Get the root component of the active design
 rootComp = design.rootComponent
@@ -898,11 +905,12 @@ class NesterCommand:
                     panelControls = [x.controls for x in toolbarPanels]
                     for controls in panelControls:
                         for control in controls:
-                            logger.debug(f'{control.id} deleted {control.deleteMe()}')
-                        logger.debug(f'{controls.id} deleted {controls.deleteMe()}')
+                            logger.debug(f'{control.name} deleted {control.deleteMe()}')
+                        logger.debug(f'{controls.name} deleted {controls.deleteMe()}')
                     logger.debug(f'{panel.id} deleted {panel.deleteMe()}')
                 
                 except AttributeError:
+                    logger.exception(f'deleting control panel {panel}{control}')
                     continue
 
             toolbarPanel_ = Fusion360CommandBase.toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_Panel') 

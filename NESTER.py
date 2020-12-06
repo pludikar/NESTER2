@@ -1,8 +1,7 @@
 import logging, os, sys, adsk
 
 appPath = os.path.dirname(os.path.abspath(__file__))
-if appPath not in sys.path:
-    sys.path.insert(0, appPath)
+
 logLevel = logging.DEBUG
 # logging.shutdown()
 
@@ -28,7 +27,13 @@ streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
 
 from . import NesterCommand
-from  .common import *
+from  .common.constants import *
+from .common.decorators import clearDebuggerDict
+
+# if debugging:
+#     import importlib
+#     importlib.reload(NesterCommand)
+#     importlib.reload(common)
 
 app = adsk.core.Application.get()
 _nestItems = nestFacesDict.setdefault(app.activeDocument.name, NesterCommand.NestItems())
@@ -82,6 +87,7 @@ def run(context):
 
     newCommand1.onRun()
 
+@clearDebuggerDict
 def stop(context):
     # self.savedTab.activate()
     for handler in logger.handlers:

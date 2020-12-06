@@ -6,7 +6,7 @@ from math import pi, tan
 import os
 import traceback
 from functools import wraps
-from common import *
+from .decorators import makeTempFaceVisible
 
 def timer(func):
     @wraps(func)
