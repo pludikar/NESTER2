@@ -3,7 +3,7 @@ import time
 import adsk.core, adsk.fusion
 
 from math import pi, tan
-import os
+import os, gc, types
 import traceback
 from functools import wraps
 from .decorators import makeTempFaceVisible
@@ -322,5 +322,112 @@ def crawlAndCopy2(parent, target:adsk.fusion.Occurrence):
         if childOccurrence.childOccurrences:
             crawlAndCopy(childOccurrence, newTargetOccurrence)
 
+def getSelectedObjects(selectionInput):
+    logger.info("getSelectedObjects")
+    objects = []
+    for i in range(0, selectionInput.selectionCount):
+        selection = selectionInput.selection(i)
+        selectedObj = selection.entity
+        if adsk.fusion.BRepBody.cast(selectedObj) or \
+           adsk.fusion.BRepFace.cast(selectedObj) or \
+           adsk.fusion.Occurrence.cast(selectedObj):
+           objects.append(selectedObj)
+    return objects
 
-   
+# Utility to get and format the various inputs
+def getInputs(command, inputs):
+    logger.info("getInputs")
+    selectionInput = None
+
+    for inputI in inputs:
+        global commandId
+        if inputI.id == command.parentCommandDefinition.id + '_selection':
+            selectionInput = inputI
+        elif inputI.id == command.parentCommandDefinition.id + '_stockObject':
+            stockObjectInput = inputI
+        elif inputI.id == command.parentCommandDefinition.id + '_spacing':
+            spacingInput = inputI
+            spacing = spacingInput.value
+        # elif inputI.id == command.parentCommandDefinition.id + '_edge':
+        #     edgeInput = inputI
+        elif inputI.id == command.parentCommandDefinition.id + '_subAssy':
+            subAssyInput = inputI
+            subAssy = subAssyInput.value
+
+    objects = getSelectedObjects(selectionInput)
+    try:
+        stockObject = getSelectedObjects(stockObjectInput)[0]
+    except IndexError:
+        stockObject = None
+    # edge = adsk.fusion.BRepEdge.cast(edgeInput.selection(0).entity)
+
+    if not objects or len(objects) == 0:
+        # TODO this probably requires much better error handling
+        return (objects, stockObject, spacing)
+    # return(objects, stockObject, edge, spacing, subAssy)
+
+    return (objects, stockObject, spacing)
+
+
+# Creates a linked copy of all components in a new Sub Assembly
+def createSubAssy(objects):
+    app = adsk.core.Application.get()
+    product = app.activeProduct
+    design = adsk.fusion.Design.cast(product)
+
+    # Get the root component and create a new component
+    rootComp = design.rootComponent
+    nestComp_Occ = rootComp.occurrences.addNewComponent(adsk.core.Matrix3D.create())
+    nestComp = nestComp_Occ.component
+    nestComp.name = "Nested Assembly"
+
+    # Create a new empty collection to hold new references
+    newFaces = adsk.core.ObjectCollection.create()
+
+    # Iterate the selected face
+    for originalFace in objects:
+
+        # Get the native face from the proxy (selected face)
+        nativeFace = originalFace.nativeObject
+
+        # Copy the parent component of this face into the nested sub assy component
+        newOccurence = nestComp.occurrences.addExistingComponent(originalFace.assemblyContext.component, adsk.core.Matrix3D.create())
+
+        # Get the same face but in the context of the new occurrence
+        newFace = nativeFace.createForAssemblyContext(newOccurence)
+
+        # Add the new face to the collection
+        newFaces.add(newFace)
+
+    return newFaces
+
+
+
+# Returns a normalized vector in positive XYZ space from a given edge
+def getPositiveUnitVectorFromEdge(edge):
+    # Set up a vector based on input edge
+    (returnValue, startPoint, endPoint) = edge.geometry.evaluator.getEndPoints()
+    directionVector = adsk.core.Vector3D.create(endPoint.x - startPoint.x,
+                                           endPoint.y - startPoint.y,
+                                           endPoint.z - startPoint.z )
+    directionVector.normalize()
+
+    if (directionVector.x < 0):
+        directionVector.x *= -1
+    if (directionVector.y < 0):
+        directionVector.y *= -1
+    if (directionVector.z < 0):
+        directionVector.z *= -1
+
+    return directionVector
+
+
+
+#used for debugging 
+def get_objects():
+    objs = gc.get_objects()
+    objs1 = [x for x in gc.get_objects() if type(x) == types.ModuleType]
+    objs2 = [x for x in objs1 if 'nest' in x.__name__.lower()] 
+    objs1name = [x.__name__.split('%2F')[-1] for x in objs1 if 'nest' in x.__name__.lower()]
+    return (objs2, objs1name)  
+

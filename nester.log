@@ -10914,3 +10914,1579 @@ DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
 DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
 DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
 DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 41; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NesterCommand; onStop; 869; Fusion360CommandBase.onStop
+DEBUG; NesterCommand; onStop; 899; Nester_start deleted True
+DEBUG; NesterCommand; onStop; 899; Nester deleted True
+DEBUG; NesterCommand; onStop; 899; Nester_export deleted True
+DEBUG; NesterCommand; onStop; 899; Nester_import deleted True
+DEBUG; NesterCommand; onStop; 899; Nester_finish deleted True
+ERROR; NesterCommand; onStop; 913; deleting control panel <adsk.core.ToolbarPanel; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::ToolbarPanel > *' at 0x0000024E842170F0> ><adsk.core.CommandControl; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::CommandControl > *' at 0x0000024E84217630> >
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 908, in onStop
+    logger.debug(f'{control.name} deleted {control.deleteMe()}')
+AttributeError: 'CommandControl' object has no attribute 'name'
+ERROR; NesterCommand; onStop; 913; deleting control panel <adsk.core.ToolbarPanel; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::ToolbarPanel > *' at 0x0000024E842173F0> ><adsk.core.CommandControl; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::CommandControl > *' at 0x0000024E840B99C0> >
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 908, in onStop
+    logger.debug(f'{control.name} deleted {control.deleteMe()}')
+AttributeError: 'CommandControl' object has no attribute 'name'
+ERROR; NesterCommand; onStop; 913; deleting control panel <adsk.core.ToolbarPanel; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::ToolbarPanel > *' at 0x0000024E84217600> ><adsk.core.CommandControl; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::CommandControl > *' at 0x0000024E842179F0> >
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 908, in onStop
+    logger.debug(f'{control.name} deleted {control.deleteMe()}')
+AttributeError: 'CommandControl' object has no attribute 'name'
+INFO; Fusion360CommandBase; toolbarPanelById_in_Workspace; 84; toolbarPanelById_in_Workspace
+INFO; Fusion360CommandBase; toolbarPanelById_in_Workspace; 84; toolbarPanelById_in_Workspace
+INFO; Fusion360CommandBase; toolbarPanelById_in_Workspace; 84; toolbarPanelById_in_Workspace
+INFO; Fusion360CommandBase; commandDefinitionById; 34; commandDefinitionById
+INFO; Fusion360CommandBase; commandControlById_in_Panel; 97; commandControlById_in_Panel
+INFO; Fusion360CommandBase; commandDefinitionById; 34; commandDefinitionById
+INFO; Fusion360CommandBase; commandControlById_in_Panel; 97; commandControlById_in_Panel
+INFO; Fusion360CommandBase; commandDefinitionById; 34; commandDefinitionById
+INFO; Fusion360CommandBase; destroyObject; 73; destroyObject - Nester_finish 
+INFO; Fusion360CommandBase; destroyObject; 73; destroyObject - Nester_start 
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentOpened event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentSaving event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentSaved event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentActivated event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentDeactivated event removed: True
+DEBUG; decorators; decoratorWrapper; 51; gc.collect count = 109
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NesterCommand; onStop; 869; Fusion360CommandBase.onStop
+DEBUG; NesterCommand; onStop; 899; Nester_start deleted True
+DEBUG; NesterCommand; onStop; 899; Nester deleted True
+DEBUG; NesterCommand; onStop; 899; Nester_export deleted True
+DEBUG; NesterCommand; onStop; 899; Nester_import deleted True
+DEBUG; NesterCommand; onStop; 899; Nester_finish deleted True
+ERROR; NesterCommand; onStop; 913; deleting control panel <adsk.core.ToolbarPanel; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::ToolbarPanel > *' at 0x00000233B73CDA80> ><adsk.core.CommandControl; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::CommandControl > *' at 0x00000233B7D43CF0> >
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 908, in onStop
+    logger.debug(f'{control.name} deleted {control.deleteMe()}')
+AttributeError: 'CommandControl' object has no attribute 'name'
+ERROR; NesterCommand; onStop; 913; deleting control panel <adsk.core.ToolbarPanel; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::ToolbarPanel > *' at 0x00000233B73CDD80> ><adsk.core.CommandControl; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::CommandControl > *' at 0x00000233B73CD720> >
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 908, in onStop
+    logger.debug(f'{control.name} deleted {control.deleteMe()}')
+AttributeError: 'CommandControl' object has no attribute 'name'
+ERROR; NesterCommand; onStop; 913; deleting control panel <adsk.core.ToolbarPanel; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::ToolbarPanel > *' at 0x00000233B7D43C30> ><adsk.core.CommandControl; proxy of <Swig Object of type 'adsk::core::Ptr< adsk::core::CommandControl > *' at 0x00000233B72C1720> >
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 908, in onStop
+    logger.debug(f'{control.name} deleted {control.deleteMe()}')
+AttributeError: 'CommandControl' object has no attribute 'name'
+INFO; Fusion360CommandBase; toolbarPanelById_in_Workspace; 84; toolbarPanelById_in_Workspace
+INFO; Fusion360CommandBase; toolbarPanelById_in_Workspace; 84; toolbarPanelById_in_Workspace
+INFO; Fusion360CommandBase; toolbarPanelById_in_Workspace; 84; toolbarPanelById_in_Workspace
+INFO; Fusion360CommandBase; commandDefinitionById; 34; commandDefinitionById
+INFO; Fusion360CommandBase; commandControlById_in_Panel; 97; commandControlById_in_Panel
+INFO; Fusion360CommandBase; commandDefinitionById; 34; commandDefinitionById
+INFO; Fusion360CommandBase; commandControlById_in_Panel; 97; commandControlById_in_Panel
+INFO; Fusion360CommandBase; commandDefinitionById; 34; commandDefinitionById
+INFO; Fusion360CommandBase; destroyObject; 73; destroyObject - Nester_finish 
+INFO; Fusion360CommandBase; destroyObject; 73; destroyObject - Nester_start 
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; CommandCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentOpened event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentSaving event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentSaved event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentCreated event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentActivated event removed: True
+DEBUG; NesterCommand; onStop; 950; DocumentDeactivated event removed: True
+DEBUG; decorators; decoratorWrapper; 51; gc.collect count = 246
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 710; init
+INFO; NesterCommand; onRun; 730; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+DEBUG; decorators; notify; 32; onDocumentDeactivated handler notified: DocumentDeactivated
+DEBUG; NesterCommand; onDocumentDeactivated; 1554; from:Untitled;to:wide cabinets v11 - Document Deactivated
+DEBUG; decorators; notify; 32; onDocumentActivated handler notified: DocumentActivated
+DEBUG; NesterCommand; onDocumentActivated; 1546; active Doc: wide cabinets v11; from:wide cabinets v11;to:wide cabinets v11 - Document Activated
+DEBUG; decorators; notify; 32; onDocumentOpened handler notified: DocumentOpened
+DEBUG; NesterCommand; onDocumentOpened; 1505; active Doc: wide cabinets v11; from:wide cabinets v11;to:wide cabinets v11 - Document Opened
+DEBUG; decorators; notify; 32; onDocumentSaving handler notified: DocumentSaving
+DEBUG; NesterCommand; onDocumentSaving; 1513; active Doc: wide cabinets v11; from:wide cabinets v11;to:wide cabinets v11 - Document Saving
+DEBUG; decorators; notify; 32; onDocumentSaved handler notified: DocumentSaved
+DEBUG; NesterCommand; onDocumentSaved; 1532; active Doc: wide cabinets v11; from:wide cabinets v11;to:wide cabinets v11 - Document Saved
+ERROR; decorators; notify; 35; DocumentSaved error termination
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\common\decorators.py", line 33, in notify
+    notify_method(orig_self, args)#, *args)#, *kwargs)
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 1537, in onDocumentSaved
+    nestFacesDict[docName + str(int(presentDocVersion)+1)] = nestFacesDict.pop(args.document.name, NestItems())
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 133, in __init__
+    nestTypeAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TYPE)
+  File "C:/Users/Dad/AppData/Local/Autodesk/webdeploy/production/424f8c95c53e4bcf60fdfcac8861ebfcf9c49f24/Api/Python/packages\adsk\fusion.py", line 14973, in findAttributes
+    return _fusion.Design_findAttributes(self, groupName, attributeName)
+RuntimeError: 4 : An API Object refers to a deleted Object
+DEBUG; decorators; notify; 32; onDocumentDeactivated handler notified: DocumentDeactivated
+DEBUG; NesterCommand; onDocumentDeactivated; 1554; from:wide cabinets v11;to:wide cabinets v11 - Document Deactivated
+DEBUG; decorators; notify; 32; onDocumentCreated handler notified: DocumentCreated
+ERROR; decorators; notify; 35; DocumentCreated error termination
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\common\decorators.py", line 33, in notify
+    notify_method(orig_self, args)#, *args)#, *kwargs)
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 1522, in onDocumentCreated
+    logger.debug(f'active Doc: {app.activeDocument.name}; from:{args.document.name};to:{command.activeDocument.name} - Document Created')
+  File "C:/Users/Dad/AppData/Local/Autodesk/webdeploy/production/424f8c95c53e4bcf60fdfcac8861ebfcf9c49f24/Api/Python/packages\adsk\core.py", line 2865, in _get_activeDocument
+    return _core.Application__get_activeDocument(self)
+RuntimeError: 2 : InternalValidationError : document
+DEBUG; decorators; notify; 32; onDocumentActivated handler notified: DocumentActivated
+DEBUG; NesterCommand; onDocumentActivated; 1546; active Doc: Untitled; from:Untitled;to:Untitled - Document Activated
+ERROR; decorators; notify; 35; DocumentActivated error termination
+Traceback (most recent call last):
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\common\decorators.py", line 33, in notify
+    notify_method(orig_self, args)#, *args)#, *kwargs)
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 1547, in onDocumentActivated
+    nestFaces = nestFacesDict.setdefault(command.activeDocument.name, NestItems())
+  File "C:/Users/Dad/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/NESTER\NesterCommand.py", line 133, in __init__
+    nestTypeAttributes:adsk.core.Attributes = design.findAttributes(NESTER_GROUP, NESTER_TYPE)
+  File "C:/Users/Dad/AppData/Local/Autodesk/webdeploy/production/424f8c95c53e4bcf60fdfcac8861ebfcf9c49f24/Api/Python/packages\adsk\fusion.py", line 14973, in findAttributes
+    return _fusion.Design_findAttributes(self, groupName, attributeName)
+RuntimeError: 4 : An API Object refers to a deleted Object
+DEBUG; decorators; notify; 32; onDocumentDeactivated handler notified: DocumentDeactivated
+DEBUG; NesterCommand; onDocumentDeactivated; 1554; from:Untitled;to:Untitled - Document Deactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 611; init
+INFO; NesterCommand; onRun; 631; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 34; init
+INFO; NesterCommand; onRun; 54; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 34; init
+INFO; NesterCommand; onRun; 54; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated
+INFO; NESTER; <module>; 42; ------------------------------start------------------------------
+INFO; NesterCommand; __init__; 34; init
+INFO; NesterCommand; onRun; 54; onRun
+DEBUG; decorators; handlerWrapper; 22; notify method created: onStartCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onExportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onImportCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onFinishCreate
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentOpened
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaving
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentSaved
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentCreated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentActivated
+DEBUG; decorators; handlerWrapper; 22; notify method created: onDocumentDeactivated

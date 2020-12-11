@@ -1,5 +1,9 @@
 import logging, os, sys, adsk
 
+from .nesterClasses import NesterCommand
+from  .common.constants import *
+from .common.decorators import clearDebuggerDict
+
 appPath = os.path.dirname(os.path.abspath(__file__))
 
 logLevel = logging.DEBUG
@@ -26,9 +30,6 @@ streamHandler.setLevel(logLevel)
 streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
 
-from . import NesterCommand
-from  .common.constants import *
-from .common.decorators import clearDebuggerDict
 
 # if debugging:
 #     import importlib
@@ -86,6 +87,7 @@ def run(context):
     adsk.autoTerminate(False)
 
     newCommand1.onRun()
+    pass
 
 @clearDebuggerDict
 def stop(context):

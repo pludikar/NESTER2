@@ -2,7 +2,7 @@
 import adsk.core, adsk.fusion, traceback
 
 import logging, os, sys
-from  .common import constants
+from  ..common import constants
 # from .common import eventHandler
 
 logger = logging.getLogger('Nester.F360CommandBase')
