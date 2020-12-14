@@ -2,13 +2,13 @@ import adsk.core, adsk.fusion, traceback
 import logging, os, sys, math
 import json
 
-logger = logging.getLogger('Nester.command')
+logger = logging.getLogger('Nester.NesterCommand')
 # logger.setLevel(logging.DEBUG)
 
-from ..common.constants import *
-from ..common.decorators import entityFromToken, eventHandler, handlers
-from ..common import utils
-from .NesterItems import NestItems
+from .constants import *
+from .common import entityFromToken, eventHandler, handlers
+from .common import utils
+from .NestItems import NestItems
 
 from . import Fusion360CommandBase #, utils
 
@@ -16,21 +16,21 @@ if debugging:
     import importlib
     importlib.reload(Fusion360CommandBase)
     importlib.reload(utils)
-    # importlib.reload(common)
 
 # Get the root component of the active design
 rootComp = design.rootComponent
 
-# transform = adsk.core.Matrix3D.create()
-
 # Utility casts various inputs into appropriate Fusion 360 Objects
 class NesterCommand:
+    ''' Creates command interface 
+
+    '''
 
     _spacing = None
     _offset = 0
     _flip = False
 
-    def __init__(self, commandName, commandDescription, commandResources, cmdId, myWorkspace, myToolbarPanelID, nestItems:NestItems):
+    def __init__(self, commandName, commandDescription, commandResources, cmdId, myWorkspace, myToolbarPanelID):
         logger.info("init")
         self.commandName = commandName
         self.commandDescription = commandDescription
@@ -39,7 +39,8 @@ class NesterCommand:
         self.myWorkspace = myWorkspace
         self.myToolbarPanelID = myToolbarPanelID
         self.DC_CmdId = 'Show Hidden'
-        self._nestItems = nestItems
+        self._nestItemsDict = {}
+        self._nestItems = self._nestItemsDict.setdefault(app.activeDocument.name, NestItems())
         
         try:
             self.app = adsk.core.Application.get()
@@ -48,6 +49,8 @@ class NesterCommand:
         except:
             logger.exception('Couldn\'t get app or ui: {}'.format(traceback.format_exc()))
 
+    def setNestDocument(self):
+        self._nestItems = self._nestItemsDict.setdefault(app.activeDocument.name, NestItems())
 
     def onRun(self):
 
@@ -748,7 +751,7 @@ class NesterCommand:
         manufOccurrence.activate()
 
     def crawlAndCopy(self, source, target:adsk.fusion.Occurrence):  
-        #crawls the rootComponent structure and makes a copy of everything under Manufacturing root
+        '''crawls the rootComponent structure and makes a copy of everything under Manufacturing root'''
 
         name = 'rootComp' if source == rootComp else source.fullPathName
         logger.debug(f'new call; parent: {name}; target: {target.fullPathName}')
@@ -767,17 +770,13 @@ class NesterCommand:
 
         logger.debug(f'source occurrences: {[o.name for o in childOccurrences]}')
 
-        # return
-
-        for sourceOccurrence in sourceOccurrences:  #Work through each source occurrence
+        #Work through each source occurrence, if source has children then recurse into children and create dummy component (prevents joints etc being copied), 
+        # if source has no children it's a leaf, then add copy of source onto manufacturing parent component 
+        for sourceOccurrence in sourceOccurrences:  
             logger.debug(f'Working on {sourceOccurrence.name}')
             logger.debug(f'{sourceOccurrence.name}: {sourceOccurrence.joints.count} joints')
             logger.debug(f'{sourceOccurrence.component.name}: {sourceOccurrence.component.joints.count} joints')
 
-            # if sourceOccurrence in targetChildren
-
-            # targetAttribute = target.attributes.itemByName(NESTER_GROUP, NESTER_TYPE)
-            # newTargetOccurrence = None #None #target.childOccurrences.itemByName(childOccurrence.name)
             logger.debug(f'target sourceOccurrences: {[o.name for o in target.childOccurrences]}')
                   
             extra = sourceOccurrence in extraTargets
@@ -795,11 +794,11 @@ class NesterCommand:
             * source is leaf, target is node, nestItem doesn't exist - delete target node
             * source is leaf, target is node, nestItem exists - delete target node and possibly nestItem
              """
-            
+            item = self._nestItems.getItem(sourceOccurrence)
             if not sourceOccurrence.childOccurrences:
-                # - add source component to target (ie make new child) if there's no source child occurrences ie. it's a branch end
+                # - add source component to target (ie make new child) if there's no source child occurrences ie. it's a leaf
                 newTargetOccurrence = target.component.occurrences.addExistingComponent(sourceOccurrence.component, sourceOccurrence.transform).createForAssemblyContext(target)
-                self._nestItems.addItem(item = newTargetOccurrence)
+                self._nestItems.addItem(item = newTargetOccurrence, sourceItem = sourceOccurrence)
                 logger.debug(f'Adding existing component {sourceOccurrence.component.name} to {target.name}')
             else:
                 # - add dummy component to target if there are source child occurrences ie it's a node
@@ -871,16 +870,3 @@ class NesterCommand:
         logger.debug(f'from:{args.document.name};to:{command.activeDocument.name} - Document Deactivated')
 
         pass
-
-# class OnCreateHandler(adsk.core.CommandCreatedEventHandler):
-#     def __init__(self):
-#         super().__init__()
-#     def notify(self, args):
-#         eventArgs :adsk.core.CommandEventArgs = args
-
-#     # Code to react to the event.
-#         app = adsk.core.Application.get()
-#         des :adsk.fusion.Design = app.activeProduct
-
-#         self.onCreate(eventArgs)       
-    

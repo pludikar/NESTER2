@@ -2,14 +2,14 @@ import adsk.core, adsk.fusion, traceback
 import logging, os, sys, math
 import json
 
-logger = logging.getLogger('Nester.command')
+logger = logging.getLogger('Nester.nestItems')
 # logger.setLevel(logging.DEBUG)
 
-from ..common.constants import *
-from ..common.decorators import entityFromToken, eventHandler, handlers
-from ..common import utils
-from .NesterItem import NestItem
-from .NesterStock import NestStock
+from .constants import *
+from .common import entityFromToken, eventHandler, handlers
+from .common import utils
+from .NestItem import NestItem
+from .NestStock import NestStock
 
 from . import Fusion360CommandBase #, utils
 
@@ -17,12 +17,9 @@ if debugging:
     import importlib
     importlib.reload(Fusion360CommandBase)
     importlib.reload(utils)
-    # importlib.reload(common)
 
 # Get the root component of the active design
 rootComp = design.rootComponent
-
-# transform = adsk.core.Matrix3D.create()
 
 # Utility casts various inputs into appropriate Fusion 360 Objects
 class NestItems():
@@ -107,7 +104,7 @@ class NestItems():
 
     def getItem(self, entity):
         try:
-            return self._itemObjects[self._itemObjects.index(entity)]#list(filter(lambda x: x == entity, self._itemObjects))
+            return self._itemObjects[self._itemObjects.index(entity.entityToken)]#list(filter(lambda x: x == entity, self._itemObjects))
         except ValueError:
             if isinstance(entity, adsk.fusion.BRepFace):
                 return NestItem(entity.assemblyContext)
@@ -126,11 +123,22 @@ class NestItems():
                 return NestStock(entity)
         finally:
             return False
+
+    def getSource(self, entity):
+        try:
+            return self.sourceObjects[self.sourceObjects.index(entity)]#list(filter(lambda x: x == entity, self._itemObjects))
+        except ValueError:
+            if isinstance(entity, adsk.fusion.BRepFace):
+                return NestStock(entity.assemblyContext)
+            elif isinstance(entity, adsk.fusion.Occurrence):
+                return NestStock(entity)
+        finally:
+            return False
       
     def addItem(self, item:adsk.fusion.Occurrence):
         try:
-            logger.info("NestItems.addItem")
             self._itemObjects.append(NestItem(item = item)) 
+            logger.debug(f'NestItems.addItem - total:{len(self._itemObjects)}')
         except:
             pass    
 

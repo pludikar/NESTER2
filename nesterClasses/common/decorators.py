@@ -4,6 +4,7 @@ import adsk.core, adsk.fusion
 from typing import Callable, List, NamedTuple
 
 from functools import wraps, lru_cache
+from ..constants import *
 
 class Handler(NamedTuple):
     handler: any
@@ -27,10 +28,10 @@ def eventHandler(handler_cls):
                     def __init__(self):
                         super().__init__()
 
-                    def notify( self, args, **kwargs):
+                    def notify( self, *args, **kwargs):
                         try:
                             logger.debug(f'{notify_method.__name__} handler notified: {args.firingEvent.name}')
-                            notify_method(orig_self, args)#, *args)#, *kwargs)
+                            notify_method(orig_self, *args)#, *args)#, *kwargs)
                         except:
                             logger.exception(f'{args.firingEvent.name} error termination')
                 h = _Handler()
@@ -99,9 +100,8 @@ def makeTempFaceVisible(method):
         return tempBody
     return wrapper
 
-cacheDict = {}
-
 def entityFromToken(method):
+    cacheDict = {}
 
     @wraps(method)
     def wrapper(*args, **kwargs):

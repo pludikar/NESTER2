@@ -1,8 +1,8 @@
 import logging, os, sys, adsk
 
-from .nesterClasses import NesterCommand
-from  .common.constants import *
-from .common.decorators import clearDebuggerDict
+from .nesterClasses import NesterCommand, NestItems
+from .nesterClasses.constants import *
+from .nesterClasses.common import clearDebuggerDict
 
 appPath = os.path.dirname(os.path.abspath(__file__))
 
@@ -30,44 +30,36 @@ streamHandler.setLevel(logLevel)
 streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
 
-
-# if debugging:
-#     import importlib
-#     importlib.reload(NesterCommand)
-#     importlib.reload(common)
-
-app = adsk.core.Application.get()
-_nestItems = nestFacesDict.setdefault(app.activeDocument.name, NesterCommand.NestItems())
+app = adsk.core.Application.get() 
 
 logger.info('------------------------------start------------------------------')
 
-commandName1 = 'Nester'
-commandDescription1 = 'Basic Nesting for Fusion 360'
-commandResources1 = './resources'
-cmdId1 = 'Nester'
-myWorkspace1 = 'FusionSolidEnvironment'
-myToolbarTabID1 = 'Nest'
-myToolbarPanelID1 = 'SolidScriptsAddinsPanel'
+commandName = 'Nester'
+commandDescription = 'Basic Nesting for Fusion 360'
+commandResources = './resources'
+cmdId = 'Nester'
+myWorkspace = 'FusionSolidEnvironment'
+myToolbarTabID = 'Nest'
+myToolbarPanelID = 'SolidScriptsAddinsPanel'
 
-# exportCmdId = cmdId1 + '_export'
-newCommand1 = NesterCommand.NesterCommand(commandName1,
-                                        commandDescription1,
-                                        commandResources1, 
-                                        cmdId1, 
-                                        myWorkspace1, 
-                                        myToolbarPanelID1,
-                                        _nestItems)
+# exportCmdId = cmdId + '_export'
+nestCommand = NesterCommand(commandName,
+                            commandDescription,
+                            commandResources, 
+                            cmdId, 
+                            myWorkspace, 
+                            myToolbarPanelID)
 
 def run(context):
     app = adsk.core.Application.get()
     ui = app.userInterface
     commandDefinitions = ui.commandDefinitions
 
-    cmdDef = [x for x in ui.commandDefinitions if commandName1 in x.id]
+    cmdDef = [x for x in ui.commandDefinitions if commandName in x.id]
     for x in cmdDef:
         x.deleteMe()
 
-    toolbarPanels = [x for x in ui.allToolbarPanels if commandName1 in x.id]
+    toolbarPanels = [x for x in ui.allToolbarPanels if commandName in x.id]
 
     for panel in toolbarPanels:
         panelControls = [x.controls for x in toolbarPanels]
@@ -80,18 +72,19 @@ def run(context):
                 continue
         panel.deleteMe()
 
-    tabBars = [x for x in ui.allToolbarTabs if commandName1 in x.id]
+    tabBars = [x for x in ui.allToolbarTabs if commandName in x.id]
     for x in tabBars:
         x.deleteMe()
 
     adsk.autoTerminate(False)
 
-    newCommand1.onRun()
+    nestCommand.onRun()
     pass
 
 @clearDebuggerDict
 def stop(context):
     # self.savedTab.activate()
+    nestCommand.onStop()
     for handler in logger.handlers:
         if  isinstance(handler, logging.FileHandler):
             handler.flush()
@@ -99,5 +92,5 @@ def stop(context):
         logger.removeHandler(handler)
     logging.info('-------------Restart')
 
-    newCommand1.onStop()
+
     

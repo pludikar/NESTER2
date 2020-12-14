@@ -2,13 +2,10 @@
 import adsk.core, adsk.fusion, traceback
 
 import logging, os, sys
-from  ..common import constants
-# from .common import eventHandler
+from  . import constants
 
 logger = logging.getLogger('Nester.F360CommandBase')
 # logger.setLevel(logging.DEBUG)
-
-# handlers = [] 
 
 # Removes the command control and definition 
 def cleanUpNavDropDownCommand(cmdId, DC_CmdId):

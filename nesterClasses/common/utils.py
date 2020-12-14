@@ -242,50 +242,50 @@ rootComp = design.rootComponent
 
 transform = adsk.core.Matrix3D.create()
 
-def crawlAndCopy(source, target:adsk.fusion.Occurrence):
+# def crawlAndCopy(source, target:adsk.fusion.Occurrence):
 
-    name = 'rootComp' if source == rootComp else source.fullPathName
-    logger.debug(f'new call; parent: {name}; target: {target.fullPathName}')
-    childOccurrences = rootComp.occurrences if source == rootComp else source.childOccurrences
+#     name = 'rootComp' if source == rootComp else source.fullPathName
+#     logger.debug(f'new call; parent: {name}; target: {target.fullPathName}')
+#     childOccurrences = rootComp.occurrences if source == rootComp else source.childOccurrences
     
-    sourceOccurrences = [o for o in childOccurrences if 'Manufacturing' not in o.component.name]
-    logger.debug(f'source occurrences: {[o.name for o in childOccurrences]}')
-    for sourceOccurrence in sourceOccurrences:
-        logger.debug(f'Working on {sourceOccurrence.name}')
-        logger.debug(f'{sourceOccurrence.name}: {sourceOccurrence.joints.count} joints')
-        logger.debug(f'{sourceOccurrence.component.name}: {sourceOccurrence.component.joints.count} joints')
-        newTargetOccurrence = None #target.childOccurrences.itemByName(childOccurrence.name)
-        logger.debug(f'target sourceOccurrences: {[o.name for o in target.childOccurrences]}')
-        for targetOccurrence in target.childOccurrences:
-            try:
-                logger.debug(f'{targetOccurrence.name }; attribute count = {targetOccurrence.attributes.count}')
-                if  targetOccurrence.attributes.itemByName('nestTree', 'source').value != sourceOccurrence.name:
-                    continue
-            except AttributeError:
-                continue
-            logger.debug(f'matched: {sourceOccurrence.name} with {targetOccurrence.name }')
-            # logger.debug(f'newTargetOccurrence exists {newTargetOccurrence is not None}')
-            newTargetOccurrence = targetOccurrence
-            break
+#     sourceOccurrences = [o for o in childOccurrences if 'Manufacturing' not in o.component.name]
+#     logger.debug(f'source occurrences: {[o.name for o in childOccurrences]}')
+#     for sourceOccurrence in sourceOccurrences:
+#         logger.debug(f'Working on {sourceOccurrence.name}')
+#         logger.debug(f'{sourceOccurrence.name}: {sourceOccurrence.joints.count} joints')
+#         logger.debug(f'{sourceOccurrence.component.name}: {sourceOccurrence.component.joints.count} joints')
+#         newTargetOccurrence = None #target.childOccurrences.itemByName(childOccurrence.name)
+#         logger.debug(f'target sourceOccurrences: {[o.name for o in target.childOccurrences]}')
+#         for targetOccurrence in target.childOccurrences:
+#             try:
+#                 logger.debug(f'{targetOccurrence.name }; attribute count = {targetOccurrence.attributes.count}')
+#                 if  targetOccurrence.attributes.itemByName('nestTree', 'source').value != sourceOccurrence.name:
+#                     continue
+#             except AttributeError:
+#                 continue
+#             logger.debug(f'matched: {sourceOccurrence.name} with {targetOccurrence.name }')
+#             # logger.debug(f'newTargetOccurrence exists {newTargetOccurrence is not None}')
+#             newTargetOccurrence = targetOccurrence
+#             break
                 
-        # logger.debug(f'newTargetOccurrence exists {newTargetOccurrence is not None}')
-        if not newTargetOccurrence:  
-            #target doesn't exist 
-            if not sourceOccurrence.childOccurrences:
-                # - add existing parent component if there's no child occurrences
-                newTargetOccurrence = target.component.occurrences.addExistingComponent(sourceOccurrence.component, transform).createForAssemblyContext(target)
-                logger.debug(f'Adding existing component {sourceOccurrence.component.name} to {target.name}')
-            else:
-                # - add dummy component if there are child occurrences
-                newTargetOccurrence = target.component.occurrences.addNewComponent(transform).createForAssemblyContext(target)
-                newTargetOccurrence.component.name = sourceOccurrence.component.name + '_'
-                logger.debug(f'Adding dummy component {newTargetOccurrence.component.name} to {target.name}')
-            logger.debug(f'added attribute {target.name} to {newTargetOccurrence.name}')
-            attribute = newTargetOccurrence.attributes.add('nestTree','source', sourceOccurrence.name)
+#         # logger.debug(f'newTargetOccurrence exists {newTargetOccurrence is not None}')
+#         if not newTargetOccurrence:  
+#             #target doesn't exist 
+#             if not sourceOccurrence.childOccurrences:
+#                 # - add existing parent component if there's no child occurrences
+#                 newTargetOccurrence = target.component.occurrences.addExistingComponent(sourceOccurrence.component, transform).createForAssemblyContext(target)
+#                 logger.debug(f'Adding existing component {sourceOccurrence.component.name} to {target.name}')
+#             else:
+#                 # - add dummy component if there are child occurrences
+#                 newTargetOccurrence = target.component.occurrences.addNewComponent(transform).createForAssemblyContext(target)
+#                 newTargetOccurrence.component.name = sourceOccurrence.component.name + '_'
+#                 logger.debug(f'Adding dummy component {newTargetOccurrence.component.name} to {target.name}')
+#             logger.debug(f'added attribute {target.name} to {newTargetOccurrence.name}')
+#             attribute = newTargetOccurrence.attributes.add('nestTree','source', sourceOccurrence.name)
 
-        # logger.debug(f'child: {childOccurrence.fullPathName}; target: {newTargetOccurrence.fullPathName}')
-        if sourceOccurrence.childOccurrences:
-            crawlAndCopy(sourceOccurrence, newTargetOccurrence)
+#         # logger.debug(f'child: {childOccurrence.fullPathName}; target: {newTargetOccurrence.fullPathName}')
+#         if sourceOccurrence.childOccurrences:
+#             crawlAndCopy(sourceOccurrence, newTargetOccurrence)
 
 def crawlAndCopy2(parent, target:adsk.fusion.Occurrence):
     # copying component, then deleteing joints

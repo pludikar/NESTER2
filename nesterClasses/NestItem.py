@@ -2,13 +2,13 @@ import adsk.core, adsk.fusion, traceback
 import logging, os, sys, math
 import json
 
-logger = logging.getLogger('Nester.command')
+logger = logging.getLogger('Nester.NestItem')
 # logger.setLevel(logging.DEBUG)
 
-from ..common.constants import *
-from ..common.decorators import entityFromToken, eventHandler, handlers
-from ..common import utils
-from .NesterStock import NestStock
+from .constants import *
+from .common import entityFromToken, eventHandler, handlers
+from .common import utils
+from .NestStock import NestStock
 
 from . import Fusion360CommandBase #, utils
 

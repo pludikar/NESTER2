@@ -5,9 +5,9 @@ import json
 logger = logging.getLogger('Nester.command')
 # logger.setLevel(logging.DEBUG)
 
-from ..common.constants import *
-from ..common.decorators import entityFromToken, eventHandler, handlers
-from ..common import utils
+from .constants import *
+from .common import entityFromToken, eventHandler, handlers
+from .common import utils
 
 from . import Fusion360CommandBase #, utils
 
@@ -15,7 +15,6 @@ if debugging:
     import importlib
     importlib.reload(Fusion360CommandBase)
     importlib.reload(utils)
-    # importlib.reload(common)
 
 # Get the root component of the active design
 rootComp = design.rootComponent
@@ -64,10 +63,12 @@ class NestStock():
             return (other.selectedFace == self.selectedFace) or (other.occurrence == self.occurrence)
         elif isinstance(other,  adsk.fusion.Occurrence):
             return other == self.occurrence
-        elif other.objectType == adsk.fusion.BRepFace.classType():
+        elif isinstance(other, adsk.fusion.BRepFace):
             return other == self.selectedFace
-        elif other.objectType == adsk.fusion.BRepBody.classType():
+        elif isinstance(other, adsk.fusion.BRepBody):
             return other == self.body
+        elif isinstance(other, str): #see if it's a token
+            return other == self._occurrenceToken
         return NotImplemented
 
     def __neq__(self, other):
@@ -128,12 +129,15 @@ class NestStock():
         self.joint.timelineObject.rollTo(False)
 
     def saveVars(self):
-        attributes = self.occurrence.attributes
-        varsDict = vars(self) 
-        varsDict = {k: v for k, v in varsDict.items() if not callable(v)} #only include variables that are not functions or methods
-        data = json.dumps(varsDict)
+        try:
+            attributes = self.occurrence.attributes
+            varsDict = vars(self) 
+            varsDict = {k: v for k, v in varsDict.items() if not callable(v)} #only include variables that are not functions or methods
+            data = json.dumps(varsDict)
 
-        nesterAttrbs = self.occurrence.attributes.add(NESTER_GROUP, NESTER_TOKENS, data)    
+            nesterAttrbs = self.occurrence.attributes.add(NESTER_GROUP, NESTER_TOKENS, data)
+        except:
+            pass
         
     def loadVars(self, attribute):
         try:
@@ -198,7 +202,7 @@ class NestStock():
         try:
             fullPath = self.occurrence.fullPathName.split("+" )
             return fullPath[-2:-1][0]
-        except IndexError:
+        except (IndexError, AttributeError):
             return ''
 
     @property
@@ -235,9 +239,13 @@ class NestStock():
 
     @selectedFace.setter
     def selectedFace(self, selected:adsk.fusion.BRepFace):
-        logger.info(f'selectedFace {selected.assemblyContext.name}')
-        self._selectedFaceToken = selected.entityToken
-        self.changed = True
+        try:
+            logger.info(f'selectedFace {selected.assemblyContext.name}')
+
+            self._selectedFaceToken = selected.entityToken
+            self.changed = True
+        except:
+            pass
         self.saveVars()
 
     @property
