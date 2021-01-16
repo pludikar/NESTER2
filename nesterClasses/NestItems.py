@@ -13,6 +13,15 @@ from .NestStock import NestStock
 
 from . import Fusion360CommandBase #, utils
 
+def fix(obj):
+    class Wrapper(obj):
+        def __eq__(self, other):
+            if isinstance(other, adsk.fusion.Occurrence):
+                return NotImplemented
+            else:
+                return obj == other
+
+
 if debugging:
     import importlib
     importlib.reload(Fusion360CommandBase)
@@ -70,7 +79,9 @@ class NestItems():
                 continue
 
             except AttributeError:
-                nestAttribute.deleteMe() #TODO indicates that the object is deleted too 
+                nestAttribute.deleteMe() #TODO indicates that the object is deleted too
+            
+        pass
 
 
     def save(self):
@@ -104,25 +115,20 @@ class NestItems():
 
     def getItem(self, entity):
         try:
-            return self._itemObjects[self._itemObjects.index(entity.entityToken)]#list(filter(lambda x: x == entity, self._itemObjects))
+            # logger.debug(f'{len(self._itemObjects)}')
+            idx = self._itemObjects.index(entity.entityToken)
+            # logger.debug(f'idx: {idx} {len(self._itemObjects)}')
+            return self._itemObjects[idx]
         except ValueError:
-            if isinstance(entity, adsk.fusion.BRepFace):
-                return NestItem(entity.assemblyContext)
-            elif isinstance(entity, adsk.fusion.Occurrence):
-                return NestItem(entity)
-        finally:
             return False
+        return False
 
     def getStock(self, entity):
         try:
             return self.stockObjects[self.stockObjects.index(entity)]#list(filter(lambda x: x == entity, self._itemObjects))
         except ValueError:
-            if isinstance(entity, adsk.fusion.BRepFace):
-                return NestStock(entity.assemblyContext)
-            elif isinstance(entity, adsk.fusion.Occurrence):
-                return NestStock(entity)
-        finally:
             return False
+        return False
 
     def getSource(self, entity):
         try:
@@ -135,10 +141,12 @@ class NestItems():
         finally:
             return False
       
-    def addItem(self, item:adsk.fusion.Occurrence):
+    def addItem(self, item:adsk.fusion.Occurrence, sourceItem = None):
         try:
-            self._itemObjects.append(NestItem(item = item)) 
+            newNestItem = NestItem(item = item, sourceItem=sourceItem)
+            self._itemObjects.append(newNestItem)
             logger.debug(f'NestItems.addItem - total:{len(self._itemObjects)}')
+            return newNestItem 
         except:
             pass    
 

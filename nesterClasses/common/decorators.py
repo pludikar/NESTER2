@@ -28,12 +28,12 @@ def eventHandler(handler_cls):
                     def __init__(self):
                         super().__init__()
 
-                    def notify( self, *args, **kwargs):
+                    def notify( self, eventArgs):
                         try:
-                            logger.debug(f'{notify_method.__name__} handler notified: {args.firingEvent.name}')
-                            notify_method(orig_self, *args)#, *args)#, *kwargs)
+                            logger.debug(f'{notify_method.__name__} handler notified: {eventArgs.firingEvent.name}')
+                            notify_method(orig_self, eventArgs)
                         except:
-                            logger.exception(f'{args.firingEvent.name} error termination')
+                            logger.exception(f'{eventArgs.firingEvent.name} error termination')
                 h = _Handler()
                 event.add(h)
                 handlers.append(Handler(h, event)) #adds to global handlers list

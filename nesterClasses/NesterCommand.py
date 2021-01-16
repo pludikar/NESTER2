@@ -39,8 +39,8 @@ class NesterCommand:
         self.myWorkspace = myWorkspace
         self.myToolbarPanelID = myToolbarPanelID
         self.DC_CmdId = 'Show Hidden'
-        self._nestItemsDict = {}
-        self._nestItems = self._nestItemsDict.setdefault(app.activeDocument.name, NestItems())
+        self._activeNestDict = {}
+        self.activeNest = self._activeNestDict .setdefault(app.activeDocument.name, NestItems())
         
         try:
             self.app = adsk.core.Application.get()
@@ -50,7 +50,17 @@ class NesterCommand:
             logger.exception('Couldn\'t get app or ui: {}'.format(traceback.format_exc()))
 
     def setNestDocument(self):
-        self._nestItems = self._nestItemsDict.setdefault(app.activeDocument.name, NestItems())
+        self.activeNest = self._activeNestDict.setdefault(app.activeDocument.name, NestItems())
+
+    def test(self):
+        app = adsk.core.Application.get()
+        ui = app.userInterface
+        allWorkspaces = ui.workspaces
+        designWorkspace :adsk.core.Workspaces = allWorkspaces.itemById(DESIGN_WORKSPACE)
+        designTabPanels = designWorkspace.toolbarTabs.itemById('SolidTab').toolbarPanels
+        dd = [x for x in designTabPanels[0].controls if isinstance(x, adsk.core.DropDownControl)]
+        
+
 
     def onRun(self):
 
@@ -66,15 +76,6 @@ class NesterCommand:
         try:
             designWorkspace :adsk.core.Workspaces = allWorkspaces.itemById(DESIGN_WORKSPACE)
 
-            nestWorkspace= allWorkspaces.itemById(NESTER_WORKSPACE)
-            if not nestWorkspace:
-                nestWorkspace = ui.workspaces.add('DesignProductType', 'NesterEnvironment', 'Nester', self.commandResources + '/nesterWorkspace' )
-
-            try:
-                self.savedTab = [t for t in designWorkspace.toolbarTabs if t.isActive][0]
-            except IndexError:
-                self.savedTab = None
-
             designTabPanels = designWorkspace.toolbarTabs.itemById('SolidTab').toolbarPanels
 
             #create nester start panel and button on design workspace tab
@@ -84,96 +85,21 @@ class NesterCommand:
                startPanel = designTabPanels.add(self.cmdId + '_startPanel', 'Nest')
 
             startPanelControls_ = startPanel.controls
-            startPanelControl_ = startPanelControls_.itemById(self.cmdId + '_start')
+            startButton_ :adsk.core.Command = startPanelControls_.itemById(self.cmdId + '_start')
             
-            if not startPanelControl_:
-                startCommandDefinition_ = commandDefinitions_.itemById(self.cmdId + '_start')
-                if not startCommandDefinition_:
-                    startCommandDefinition_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_start',
-                                                                                        self.commandName+'_start', 
-                                                                                        'Start Nester',
-                                                                                        self.commandResources+'/start')
-            self.onStartCreate(startCommandDefinition_.commandCreated)
+            if not startButton_:
+                startButtonDef_ = commandDefinitions_.itemById(self.cmdId + '_start')
+                if not startButtonDef_:
+                    startButtonDef_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_start',
+                                                                            self.commandName+'_start', 
+                                                                            'Start Nester',
+                                                                            self.commandResources+'/start')
+            self.onStartCreate(startButtonDef_.commandCreated)  #Bind handler to startButton
             
-            StartPanelControl_ = startPanelControls_.addCommand(startCommandDefinition_)
+            StartPanelControl_ = startPanelControls_.addCommand(startButtonDef_)
             StartPanelControl_.isPromoted = True
 
             #design workspace nester panel and button complete
-
-            #now create Nester tab and panel 
-            toolbarTabs = designWorkspace.toolbarTabs
-            self.nesterTab_ :adsk.core.ToolbarTab = toolbarTabs.add(self.cmdId +'Tab', 'Nest')
-
-            nesterTabPanels_ = self.nesterTab_.toolbarPanels
-            nesterTabPanel_ = nesterTabPanels_.itemById(self.cmdId +'_TabPanel')
-
-            if nesterTabPanel_ is None:
-                nesterTabPanel_ = nesterTabPanels_.add(self.cmdId +'_TabPanel', 'Nester')
-   
-            nesterTabPanelControls_ = nesterTabPanel_.controls               
-            nesterTabPanelControl_ = nesterTabPanelControls_.itemById(self.cmdId + "_TPCtrl")
-
-            if not nesterTabPanelControl_:
-                nesterCommandDefinition_ = commandDefinitions_.itemById(self.cmdId + "_TPCtrl")
-                if not nesterCommandDefinition_:
-                    nesterCommandDefinition_ = commandDefinitions_.addButtonDefinition(self.cmdId, 
-                                                                                self.commandName, 
-                                                                                self.commandDescription, 
-                                                                                self.commandResources + '/nesterWorkspace')
-            self.onCreate(nesterCommandDefinition_.commandCreated)
-
-            nesterPanelControl_ = nesterTabPanelControls_.addCommand(nesterCommandDefinition_)
-            nesterPanelControl_.isPromoted = True
-            nesterPanelControl_.isVisible = False
-    
-            exportCommandDefinition_ = commandDefinitions_.itemById(self.cmdId+'_export')
-
-            if not exportCommandDefinition_:
-                exportCommandDefinition_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_export', 
-                                                                                    self.commandName+'_export', 
-                                                                                    'export>dxf', 
-                                                                                    self.commandResources+'/export')
-            
-            self.onExportCreate(exportCommandDefinition_.commandCreated)
-
-            exportControl_ = nesterTabPanelControls_.addCommand(exportCommandDefinition_)
-            exportControl_.isPromoted = True
-            exportControl_.isVisible = True
-
-            importCommandDefinition_ = commandDefinitions_.itemById(self.cmdId+'_import')
-
-            if not importCommandDefinition_:
-                importCommandDefinition_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_import', 
-                                                                                    self.commandName+'_import', 
-                                                                                    'dxf>import', 
-                                                                                    self.commandResources+'/import')
-            self.onImportCreate(importCommandDefinition_.commandCreated)
-
-            importPanelControl_ = nesterTabPanelControls_.addCommand(importCommandDefinition_)
-            importPanelControl_.isPromoted = True
-
-            finishTabPanel_ = self.nesterTab_.toolbarPanels.itemById(self.cmdId +'_FinishTabPanel')
-
-            if finishTabPanel_ is None:
-                finishTabPanel_ = self.nesterTab_.toolbarPanels.add(self.cmdId +'_FinishTabPanel', 'Finish Nester')
-
-            finishTabPanelControls_ = finishTabPanel_.controls
-            finishPanelControl_ = finishTabPanelControls_.itemById(self.cmdId + '_finish')
-        
-            if not finishPanelControl_:
-                finishCommandDefinition_ = commandDefinitions_.itemById(self.cmdId + '_finish')
-                if not finishCommandDefinition_:
-                    finishCommandDefinition_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_finish',
-                                                                                        self.commandName+'_finish', 
-                                                                                        'Finish Nester',
-                                                                                        self.commandResources+'/finishOutcomeView')
-                finishPanelControl_ = finishTabPanelControls_.addCommand(finishCommandDefinition_)
-
-            finishPanelControl_.isPromoted = False
-            finishPanelControl_.isPromotedByDefault = True
-            finishPanelControl_.isVisible = False
-
-            self.onFinishCreate(finishCommandDefinition_.commandCreated)
 
             self.onDocumentOpened(app.documentOpened)
 
@@ -193,7 +119,7 @@ class NesterCommand:
 
     def onStop(self):
         global handlers
-        logger.info("Fusion360CommandBase.onStop")
+        logger.info("Method called")
         try:
             app = adsk.core.Application.get()
             ui = app.userInterface
@@ -223,7 +149,7 @@ class NesterCommand:
 
             cmdDef = [x for x in ui.commandDefinitions if self.cmdId in x.id]
             for x in cmdDef:
-                logger.debug(f'{x.id} deleted {x.deleteMe()}')
+                logger.debug(f'cmdDef:{x.id} deleted {x.deleteMe()}')
 
             toolbarPanels = [x for x in ui.allToolbarPanels if self.cmdId in x.id]
 
@@ -232,12 +158,12 @@ class NesterCommand:
                     panelControls = [x.controls for x in toolbarPanels]
                     for controls in panelControls:
                         for control in controls:
-                            logger.debug(f'{control.name} deleted {control.deleteMe()}')
-                        logger.debug(f'{controls.name} deleted {controls.deleteMe()}')
-                    logger.debug(f'{panel.id} deleted {panel.deleteMe()}')
+                            logger.debug(f'Toolcontrol:{control.id} deleted {control.deleteMe()}')
+                        # logger.debug(f'{controls.name} deleted {controls.deleteMe()}')
+                    logger.debug(f'Panel:{panel.id} deleted {panel.deleteMe()}')
                 
                 except AttributeError:
-                    logger.exception(f'deleting control panel {panel}{control}')
+                    logger.exception(f'deleting control panel {panel.id}/{control.id}')
                     continue
 
             toolbarPanel_ = Fusion360CommandBase.toolbarPanelById_in_Workspace(self.myWorkspace, self.cmdId +'_Panel') 
@@ -281,6 +207,129 @@ class NesterCommand:
         except:
             logger.exception('AddIn Stop Failed: {}'.format(traceback.format_exc()))
 
+    def createTabPanels(self):
+
+        allWorkspaces = ui.workspaces
+        commandDefinitions_ = ui.commandDefinitions
+        designWorkspace :adsk.core.Workspaces = allWorkspaces.itemById(DESIGN_WORKSPACE)
+
+        nestWorkspace= allWorkspaces.itemById(NESTER_WORKSPACE)
+
+        designWorkspace :adsk.core.Workspaces = allWorkspaces.itemById(DESIGN_WORKSPACE)
+
+        designTabPanels = designWorkspace.toolbarTabs.itemById('SolidTab').toolbarPanels
+
+        # if not nestWorkspace:
+        #     nestWorkspace = ui.workspaces.add('DesignProductType', 'NesterEnvironment', 'Nester', self.commandResources + '/nesterWorkspace' )
+
+        try:
+            self.savedTab = [t for t in designWorkspace.toolbarTabs if t.isActive][0]
+        except IndexError:
+            self.savedTab = None
+
+        #now create separate Nester tab and panel 
+        toolbarTabs: adsk.core.ToolbarTabs = designWorkspace.toolbarTabs
+        self.nesterTab_ = toolbarTabs.itemById(self.cmdId +'Tab')
+        if self.nesterTab_ is None:
+            self.nesterTab_ :adsk.core.ToolbarTab = toolbarTabs.add(self.cmdId +'Tab', 'Nest')
+
+        nesterTabPanels_ = self.nesterTab_.toolbarPanels
+        nesterTabPanel_ = nesterTabPanels_.itemById(self.cmdId +'_TabPanel')
+
+        for panel in designTabPanels:
+            if self.cmdId in panel.id:
+                continue
+            nesterPanel = nesterTabPanels_.add(self.cmdId+'--'+panel.id, panel.name)
+
+            for control in panel.controls:
+                try:
+                    if isinstance(control, adsk.core.SeparatorControl):
+                        nesterPanel.controls.addSeparator()
+                        continue
+                    elif isinstance(control, adsk.core.DropDownControl):
+                        dd = nesterPanel.controls.addDropDown(control.name, control.resourceFolder)#'xyz', self.commandResources + '/nesterWorkspace')
+                        for subControl in control.controls:
+                            dd.controls.addCommand(subControl.commandDefinition)
+                    btn = nesterPanel.controls.addCommand(control.commandDefinition)
+                    btn.isVisible = control.isVisible
+                    btn.isPromoted = control.isPromoted
+                except AttributeError:
+                    continue
+        if nesterTabPanel_ is None:
+            nesterTabPanel_ = nesterTabPanels_.add(self.cmdId +'_TabPanel', 'Nester')
+
+        #Nester Tab and main Panel has been created
+
+        #start populating panel with controls (Commands, drop downs, separators etc. as required)
+
+        nesterTabPanelControls_ = nesterTabPanel_.controls               
+        nesterTabPanelControl_ = nesterTabPanelControls_.itemById(self.cmdId + "_TPCtrl")  #nesterTabPanelControl_ is the parent of  highest level control
+
+        if not nesterTabPanelControl_:
+            setupButtonDef_ = commandDefinitions_.itemById(self.cmdId + '_setUp')
+            if not setupButtonDef_:
+                setupButtonDef_ = commandDefinitions_.addButtonDefinition(self.cmdId + '_setUp', 
+                                                                            self.commandName, 
+                                                                            self.commandDescription, 
+                                                                            self.commandResources + '/nesterWorkspace')
+            self.onCreate(setupButtonDef_.commandCreated) #bind handler to setup button
+
+        setupButton_ = nesterTabPanelControls_.addCommand(setupButtonDef_) #Add setup Button to TabPanel
+        setupButton_.isPromoted = True
+        setupButton_.isVisible = False
+
+        #adding export button
+        exportButtonDef_ = commandDefinitions_.itemById(self.cmdId+'_export')
+
+        if not exportButtonDef_:
+            exportButtonDef_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_export', 
+                                                                    self.commandName+'_export', 
+                                                                    'export>dxf', 
+                                                                    self.commandResources+'/export')
+        
+        self.onExportCreate(exportButtonDef_.commandCreated)
+
+        exportButton_ = nesterTabPanelControls_.addCommand(exportButtonDef_)
+        exportButton_.isPromoted = True
+        exportButton_.isVisible = True
+
+        importButtonDef_ = commandDefinitions_.itemById(self.cmdId+'_import')
+
+        if not importButtonDef_:
+            importButtonDef_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_import', 
+                                                                    self.commandName+'_import', 
+                                                                    'dxf>import', 
+                                                                    self.commandResources+'/import')
+        self.onImportCreate(importButtonDef_.commandCreated)
+
+        importButton_ = nesterTabPanelControls_.addCommand(importButtonDef_)
+        importButton_.isPromoted = True
+
+        finishTabPanel_ = self.nesterTab_.toolbarPanels.itemById(self.cmdId +'_FinishTabPanel')
+
+        if finishTabPanel_ is None:
+            finishTabPanel_ = self.nesterTab_.toolbarPanels.add(self.cmdId +'_FinishTabPanel', 'Finish Nester')
+
+        finishTabPanelControls_ = finishTabPanel_.controls
+        finishPanelControl_ = finishTabPanelControls_.itemById(self.cmdId + '_finish')
+    
+        if not finishPanelControl_:
+            finishButtonDef_ = commandDefinitions_.itemById(self.cmdId + '_finish')
+            if not finishButtonDef_:
+                finishButtonDef_ = commandDefinitions_.addButtonDefinition(self.cmdId+'_finish',
+                                                                            self.commandName+'_finish', 
+                                                                            'Finish Nester',
+                                                                            self.commandResources+'/finishOutcomeView')
+        finishButton_ = finishTabPanelControls_.addCommand(finishButtonDef_)
+
+        finishButton_.isPromoted = False
+        finishButton_.isPromotedByDefault = True
+        finishButton_.isVisible = False
+
+        self.onFinishCreate(finishButtonDef_.commandCreated)
+
+
+
 
     @eventHandler(adsk.core.CommandEventHandler)
     def onPreview(self,  args:adsk.core.CommandCreatedEventArgs):
@@ -290,16 +339,16 @@ class NesterCommand:
 
         logger.info("----------------NesterCommand.onPreview------------------")
         (objects, stockObject, spacing) = utils.getInputs(command, inputs)
-        self._nestItems.spacing = spacing
-        logger.debug('spacing; {}'.format(self._nestItems.spacing))
+        self.activeNest.spacing = spacing
+        logger.debug('spacing; {}'.format(self.activeNest.spacing))
 
-        for stockObject in self._nestItems.addedStock:
+        for stockObject in self.activeNest.addedStock:
             logger.debug(f'working on added stockObjects: {stockObject.name}')
             logger.debug('calling addJointOrigin; stockObject add loop')
             stockObject.addJointOrigin()
             stockObject.added = False
 
-        for face in self._nestItems.changedFaces:
+        for face in self.activeNest.changedFaces:
             marker = design.timeline.markerPosition
             logger.debug(f'working on changed face: {face.name}')
             logger.debug(f'calling changeJointOrigin; face change loop')
@@ -307,7 +356,7 @@ class NesterCommand:
             face.changed = False
             design.timeline.markerPosition = marker
     
-        for face in self._nestItems.addedFaces:
+        for face in self.activeNest.addedFaces:
             logger.debug(f'working on adding face: {face.name}')
             logger.debug(f'calling addJointOrigin; face add loop')
             face.addJointOrigin()
@@ -315,12 +364,12 @@ class NesterCommand:
             face.added = False
 
         positionOffset = 0
-        for stockObject in self._nestItems._stockObjects:
+        for stockObject in self.activeNest._stockObjects:
             positionOffset += stockObject.xOffset
-            for face in self._nestItems.allFaces:
+            for face in self.activeNest.allFaces:
                 logger.debug('working on position offset face; {}'.format(face.name))
                 logger.debug('position offset before; {}'.format(positionOffset))
-                positionOffset += self._nestItems.spacing + face.xOffset
+                positionOffset += self.activeNest.spacing + face.xOffset
                 logger.debug('new position offset after; {}'.format(positionOffset))
                 face.xPositionOffset = positionOffset
                 positionOffset += face.xOffset                
@@ -360,8 +409,8 @@ class NesterCommand:
                     
         activeSelections = self.ui.activeSelections.all #save active selections - selections are sensitive and fragile, any processing beyond just reading on live selections will destroy selection 
         bodySelections = self.ui.activeSelections.all
-        nestStockFaces = self._nestItems.allStockFaces #[stockObject.selectedFace for stockObject in self._nestItems.stockObjects]
-        nestFaces = self._nestItems.allItemFaces #[stockObject.selectedFace for stockObject in self._nestItems.allFaces if stockObject.selectedFace]
+        nestStockFaces = self.activeNest.allStockFaces #[stockObject.selectedFace for stockObject in self._nestItems.stockObjects]
+        nestFaces = self.activeNest.allItemFaces #[stockObject.selectedFace for stockObject in self._nestItems.allFaces if stockObject.selectedFace]
 
         if changedInput.id == command.parentCommandDefinition.id + '_stockObject':
             addedstockFaces:adsk.fusion.BRepFaces = [stockObjectFace for stockObjectFace in activeSelections if (stockObjectFace not in nestStockFaces) and (stockObjectFace not in nestFaces) ]
@@ -370,22 +419,22 @@ class NesterCommand:
             logger.debug('removed stockObjects {}'.format([x.assemblyContext.name for x in removedstockFaces]))
             changedInput.commandInputs.itemById(command.parentCommandDefinition.id + '_selection').hasFocus = True
             for stockFace in addedstockFaces:
-                stockObject = self._nestItems.getStock(stockFace)
+                stockObject = self.activeNest.getStock(stockFace)
                 if addedstockFaces:
                     stockObject.selectedFace =  stockFace #self._nestItems.addStock(stockFace)
                     # self.ui.activeSelections.all = activeSelections
                 if removedstockFaces:
-                    self._nestItems.removeStock(stockFace.assemblyContext)
+                    self.activeNest.removeStock(stockFace.assemblyContext)
             return
 
         #remove stock faces from selection collection
-        for stockObjectFace in self._nestItems.stockObjects:
+        for stockObjectFace in self.activeNest.stockObjects:
             bodySelections.removeByItem(stockObjectFace.selectedFace)
 
 
 #TODO
-        bodyList = [x.selectedFace.body for x in self._nestItems.nestObjects if x.selectedFace] 
-        for stockObject in self._nestItems.stockObjects:
+        bodyList = [x.selectedFace.body for x in self.activeNest.nestObjects if x.selectedFace] 
+        for stockObject in self.activeNest.stockObjects:
 
             addedFaces = [face for face in bodySelections if face not in nestFaces ]
             logger.debug(f'added faces {[x.assemblyContext.name for x in addedFaces]}')
@@ -400,14 +449,15 @@ class NesterCommand:
                 #==============================================================================
                 #         Faces have been removed
                 #==============================================================================
+                # self.activeNest:NestItems = self.activeNest
                 if self._flip:
-                    faceObject = [o for o in self._nestItems if o == face][0]
+                    faceObject = [o for o in self.activeNest.itemObject if o == face][0]  #TODO
                     flippedFace = utils.getBottomFace(face)
                     faceObject.selectedFace = flippedFace
                     changedInput.addSelection(flippedFace)
                     self._flip = False
                     return
-                self._nestItems.remove(face)
+                self.activeNest.remove(face)
                             
             for face in addedFaces:
             #==============================================================================
@@ -420,7 +470,7 @@ class NesterCommand:
                      selectedFace = utils.getTopFace(face)
                      changedInput.addSelection(selectedFace)
 
-                faceObject = self._nestItems.get(face, NestItem)
+                faceObject = self.activeNest.get(face, NestItem)
 
                 if len(faceObject):
                     faceObject = faceObject[0]
@@ -434,7 +484,7 @@ class NesterCommand:
                         faceObject.changed = True
                         return
 
-                self._nestItems.add(selectedFace, stockObject)
+                self.activeNest.add(selectedFace, stockObject)
 
             return
 
@@ -458,9 +508,9 @@ class NesterCommand:
         command_ = args.command
         inputs_ = command_.commandInputs
 
-        if not self._nestItems.spacing:
+        if not self.activeNest.spacing:
             (objects, stockObject, spacing) = utils.getInputs(command_, inputs_)
-            self._nestItems.spacing = spacing
+            self.activeNest.spacing = spacing
 
     @eventHandler(adsk.core.CommandEventHandler)
     def onExportExecute(self, args:adsk.core.CommandEventArgs):
@@ -481,10 +531,10 @@ class NesterCommand:
 
         if design.snapshots.hasPendingSnapshot:
             design.snapshots.add() 
-        sketch = rootComp.sketches.add(self._nestItems.stockObjects[0].selectedFace)
-        for stock in self._nestItems.stockObjects:
+        sketch = rootComp.sketches.add(self.activeNest.stockObjects[0].selectedFace)
+        for stock in self.activeNest.stockObjects:
             stock.profileEntities =sketch.project(stock.body)
-        for entity in self._nestItems._nestObjects:
+        for entity in self.activeNest._nestObjects:
             entity.profileEntities = sketch.project(entity.body)
             rotationProperty = entity.selectedFace.appearance.appearanceProperties.itemByName('Rotation')
             if rotationProperty:
@@ -515,9 +565,9 @@ class NesterCommand:
         filename = fileDialog.filename
 
         importManager = app.importManager
-        dxfOptions = importManager.createDXF2DImportOptions(filename, self._nestItems.stockObjects[0].selectedFace)
+        dxfOptions = importManager.createDXF2DImportOptions(filename, self.activeNest.stockObjects[0].selectedFace)
         dxfOptions.isSingleSketchResult = True
-        position = adsk.core.Point2D.create(3/8*2.54, -(self._nestItems.stockObjects[0].xOffset*2 - 3/8*2.54))
+        position = adsk.core.Point2D.create(3/8*2.54, -(self.activeNest.stockObjects[0].xOffset*2 - 3/8*2.54))
         dxfOptions.position = position
 
         sketch = rootComp.sketches.itemByName('nestImport')
@@ -525,7 +575,7 @@ class NesterCommand:
             # sketch.timelineObject.rollTo(True)
             try:
                 sketch.deleteMe()
-                extrudeFeature = self._nestItems.stockObjects[0].occurrence.component.features.itemByName('nestExtrude')
+                extrudeFeature = self.activeNest.stockObjects[0].occurrence.component.features.itemByName('nestExtrude')
                 extrudeFeature.deleteMe()
             except AttributeError:
                 pass
@@ -544,12 +594,12 @@ class NesterCommand:
         yAxis = adsk.core.Vector3D.create(0,1,0)
         zAxis = adsk.core.Vector3D.create(0,0,1)
         offsetVector = adsk.core.Vector3D.create(0,0,0)
-        stockCentre = self._nestItems.allFaces[0].stock.originPoint
+        stockCentre = self.activeNest.allFaces[0].stock.originPoint
         defaultUnits = design.unitsManager.defaultLengthUnits
         profileCurves = []
         # baseFeat.startEdit()
 
-        faces = self._nestItems.allFaces.copy()
+        faces = self.activeNest.allFaces.copy()
 
         for nestedProfile in nestedProfiles:
  
@@ -590,7 +640,7 @@ class NesterCommand:
         if design.snapshots.hasPendingSnapshot:
             design.snapshots.add()
 
-        stockComponent = adsk.fusion.Component.cast(self._nestItems.stockObjects[0].selectedFace.body.parentComponent)
+        stockComponent = adsk.fusion.Component.cast(self.activeNest.stockObjects[0].selectedFace.body.parentComponent)
         loopCollection = adsk.core.ObjectCollection.create()
         # sketchProfiles = [p for p in sketch.profiles] 
         # logger.debug(f'sketchProfiles: {sketchProfiles}')
@@ -607,11 +657,11 @@ class NesterCommand:
             profileCollection.add(profile)
 
         zero = adsk.core.ValueInput.createByReal(0)
-        start = adsk.fusion.FromEntityStartDefinition.create(self._nestItems.stockObjects[0].selectedFace, zero)
+        start = adsk.fusion.FromEntityStartDefinition.create(self.a.stockObjects[0].selectedFace, zero)
 
         extrudeInput = rootComp.features.extrudeFeatures.createInput(profileCollection, adsk.fusion.FeatureOperations.CutFeatureOperation)
         extrudeInput.participantBodies = [stockComponent.bRepBodies.item(0)]
-        heightVal = adsk.core.ValueInput.createByReal(self._nestItems.stockObjects[0].height)
+        heightVal = adsk.core.ValueInput.createByReal(self.activeNest.stockObjects[0].height)
         height = adsk.fusion.DistanceExtentDefinition.create(heightVal)
         extrudeInput.setOneSideExtent(height,adsk.fusion.ExtentDirections.NegativeExtentDirection)
         extrudeInput.startExtent = start
@@ -646,9 +696,9 @@ class NesterCommand:
                                             adsk.core.ValueInput.createByReal(2.54))
 
         try:
-            for stockFace in self._nestItems.allStockFaces:
+            for stockFace in self.activeNest.allStockFaces:
                 selectionstockObjectInput.addSelection(stockFace)
-            for face in self._nestItems.allItemFaces:
+            for face in self.activeNest.allItemFaces:
                 selectionInput.addSelection(face)
                 selectionInput.hasFocus = True
         except RuntimeError:
@@ -672,6 +722,8 @@ class NesterCommand:
 
         command_ = args.command
         inputs_ = command_.commandInputs
+
+        self.createTabPanels()
 
         self.onStartExecute(command_.execute)
 
@@ -719,20 +771,41 @@ class NesterCommand:
 
         design.activateRootComponent()
 
-        self.onDestroy(command_.destroy)
+        self.onFinishExecute(command_.execute)
+
+        command_.doExecute(False)
                             
         logger.info('Finish Panel command created successfully')
 
 
     @eventHandler(adsk.core.CommandEventHandler)
+    def onFinishExecute(self, args:adsk.core.CommandEventArgs):
+        command_ = args.command
+        inputs_ = command_.commandInputs
+
+        for panel in self.nesterTab_.toolbarPanels:
+            for control in panel.controls:
+                try:
+                    control.deleteMe()
+                except:
+                    continue
+            try:
+                panel.deleteMe()
+            except:
+                pass
+
+
+    @eventHandler(adsk.core.CommandEventHandler)
     def onStartExecute(self, args:adsk.core.CommandEventArgs):
 
+        logger.debug(f'{len(self.activeNest._itemObjects)}')
         command_ = args.command
         inputs_ = command_.commandInputs
 
         transform = adsk.core.Matrix3D.create()
         # compNamesAtRoot = [c.component.name for c in rootComp.occurrences]
         manufOccurrence = [o for o in rootComp.occurrences if o.component.name == 'Manufacturing']
+        logger.debug(f'{len(self.activeNest._itemObjects)}')
         if not manufOccurrence:
             manufOccurrence = rootComp.occurrences.addNewComponent(transform)
             manufOccurrence.component.name = 'Manufacturing'
@@ -761,7 +834,7 @@ class NesterCommand:
         sourceOccurrences = [o for o in childOccurrences if 'Manufacturing' not in o.component.name] 
 
         targetChildren = target.childOccurrences
-        targetChildrenFromNestObjects = list(filter(lambda object: object.parentName == target.name, self._nestItems.nestObjects))
+        targetChildrenFromNestObjects = list(filter(lambda object: object.parentName == target.name, self.activeNest.nestObjects))
 
         sourcesOfTargets = [n.sourceOccurrence for n in targetChildrenFromNestObjects]
 
@@ -794,21 +867,23 @@ class NesterCommand:
             * source is leaf, target is node, nestItem doesn't exist - delete target node
             * source is leaf, target is node, nestItem exists - delete target node and possibly nestItem
              """
-            item = self._nestItems.getItem(sourceOccurrence)
-            if not sourceOccurrence.childOccurrences:
-                # - add source component to target (ie make new child) if there's no source child occurrences ie. it's a leaf
-                newTargetOccurrence = target.component.occurrences.addExistingComponent(sourceOccurrence.component, sourceOccurrence.transform).createForAssemblyContext(target)
-                self._nestItems.addItem(item = newTargetOccurrence, sourceItem = sourceOccurrence)
-                logger.debug(f'Adding existing component {sourceOccurrence.component.name} to {target.name}')
-            else:
-                # - add dummy component to target if there are source child occurrences ie it's a node
-                newTargetOccurrence = target.component.occurrences.addNewComponent(sourceOccurrence.transform).createForAssemblyContext(target)
-                newTargetOccurrence.component.name = sourceOccurrence.component.name + '_'
-                self._nestItems.addItem(item = newTargetOccurrence)  #, sourceItem = sourceOccurrence)
-                logger.debug(f'Adding dummy component {newTargetOccurrence.component.name} to {target.name}')
+            item = self.activeNest.getItem(sourceOccurrence)
+            logger.debug(f'found item: {item.name if item else "New"}')
+            if not item:
+                if not sourceOccurrence.childOccurrences:
+                    # - add source component to target (ie make new child) if there's no source child occurrences ie. it's a leaf
+                    newTargetOccurrence = target.component.occurrences.addExistingComponent(sourceOccurrence.component, sourceOccurrence.transform).createForAssemblyContext(target)
+                    item = self.activeNest.addItem(item = newTargetOccurrence, sourceItem = sourceOccurrence)
+                    logger.debug(f'Adding existing component {sourceOccurrence.component.name} to {target.name}')
+                else:
+                    # - add dummy component to target if there are source child occurrences ie it's a node
+                    newTargetOccurrence = target.component.occurrences.addNewComponent(sourceOccurrence.transform).createForAssemblyContext(target)
+                    newTargetOccurrence.component.name = sourceOccurrence.component.name + '_'
+                    item = self.activeNest.addItem(item = newTargetOccurrence ,sourceItem = sourceOccurrence)
+                    logger.debug(f'Adding dummy component {newTargetOccurrence.component.name} to {target.name}')
 
             if sourceOccurrence.childOccurrences:  #if the source component has children - then recurse component to find and process children 
-                self.crawlAndCopy(sourceOccurrence, newTargetOccurrence)
+                self.crawlAndCopy(sourceOccurrence, item.occurrence)
 
             #no more children to process, so return
 

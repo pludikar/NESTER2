@@ -35,6 +35,7 @@ class NestStock():
             self._sourceOccurrenceToken  = sourceItem.entityToken if sourceItem else None
 
             self._selectedFaceToken = None
+            # self._bodyToken = None
 
             # self._body = self.occurrence.bRepBodies[0] #item.bRepBodies[0].entityToken if item.bRepBodies else None #TODO - check what happens if more than one body
                 # occurrence = selectedFace.body.createForAssemblyContext
@@ -59,28 +60,36 @@ class NestStock():
             self.saveVars()
 
     def __eq__(self, other):
+        '''
+        defines what can be compared (==) to this object.  
+        Plays a key role in any native python comparison 
+        - note that F360 has not implemented their comparisons correctly (as of Dec 2020), doesn't return NotImplemented as they are supposed to 
+        '''
         if isinstance(other, self.__class__):
             return (other.selectedFace == self.selectedFace) or (other.occurrence == self.occurrence)
-        elif isinstance(other,  adsk.fusion.Occurrence):
-            return other == self.occurrence
-        elif isinstance(other, adsk.fusion.BRepFace):
-            return other == self.selectedFace
-        elif isinstance(other, adsk.fusion.BRepBody):
-            return other == self.body
         elif isinstance(other, str): #see if it's a token
-            return other == self._occurrenceToken
+            return other == self._occurrenceToken or other == self._sourceOccurrenceToken
+        elif isinstance(other,  adsk.fusion.Occurrence):
+            return other.entityToken == self._occurrenceToken or other.entityToken == self._sourceOccurrenceToken
+        elif isinstance(other, adsk.fusion.BRepFace):
+            return other.entityToken == self._selectedFaceToken
+        # elif isinstance(other, adsk.fusion.BRepBody):
+        #     return other.entityToken == self._bodyToken
         return NotImplemented
 
-    def __neq__(self, other):
-        if isinstance(other, self.__class__):
-            return other.selectedFace != self.selectedFace
-        elif isinstance(other,  adsk.fusion.Occurrence):
-            return other != self.occurrence
-        if other.objectType == adsk.fusion.BRepFace.classType():
-            return other != self.selectedFace
-        elif other.objectType == adsk.fusion.BRepBody.classType():
-            return other != self.body
-        return NotImplemented
+    # In Python 3 and up __ne__  automatically inverts result from __eq__, except for NotImplemented 
+    # def __ne__(self, other):
+    #     if isinstance(other, self.__class__):
+    #         return (other.selectedFace != self.selectedFace) or (other.occurrence != self.occurrence)
+    #     elif isinstance(other, str): #see if it's a token
+    #         return other != self._occurrenceToken or other != self._sourceOccurrenceToken
+    #     elif isinstance(other,  adsk.fusion.Occurrence):
+    #         return other.entityToken != self._occurrenceToken or other.entityToken != self._sourceOccurrenceToken
+    #     elif isinstance(other, adsk.fusion.BRepFace):
+    #         return other.entityToken != self._selectedFaceToken
+    #     elif isinstance(other, adsk.fusion.BRepBody):
+    #         return other.entityToken != self._bodyToken
+    #     return NotImplemented
 
     def addJointOrigin(self):
         logger.info(f"NestStock.addJointOrigin - {self.occurrence.component.name}")
